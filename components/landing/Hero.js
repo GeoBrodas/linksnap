@@ -1,16 +1,11 @@
 import { Stack, Heading, Text, VStack, Button } from '@chakra-ui/react';
+import { SiGithub } from 'react-icons/si';
+import Container from './Container';
 
 function Hero() {
   return (
-    <Stack
-      flexDirection={'column'}
-      justifyContent={'center'}
-      height={'70vh'}
-      width={'80%'}
-      margin={'auto'}
-      paddingY={'4rem'}
-    >
-      <Stack width={'50%'} spacing={5}>
+    <Container>
+      <Stack width={{ base: 'full', lg: '50%' }} spacing={5}>
         <Heading color="#fffffe">LinkTree for developers</Heading>
 
         {/* Para */}
@@ -27,10 +22,14 @@ function Hero() {
         style={{
           marginTop: '2rem',
         }}
+        variant={'orange'}
+        fontSize={'1rem'}
+        iconSpacing={'1rem'}
+        leftIcon={<SiGithub fontSize={'1.5rem'} />}
       >
         Sign Up with GitHub
       </Button>
-    </Stack>
+    </Container>
   );
 }
 
