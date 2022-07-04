@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { StyleFunctionProps } from '@chakra-ui/theme-tools';
 
 const theme = extendTheme({
   components: {
@@ -13,6 +14,28 @@ const theme = extendTheme({
         },
       },
     },
+    Text: {
+      variants: {
+        orange: {
+          color: '#a7a9be',
+        },
+      },
+    },
+    Heading: {
+      variants: {
+        orange: {
+          color: '#fffffe',
+        },
+      },
+    },
+  },
+
+  styles: {
+    global: (StyleFunctionProps) => ({
+      body: {
+        bg: '#0f0e17',
+      },
+    }),
   },
 });
 
