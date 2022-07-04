@@ -17,7 +17,7 @@ import { BiExit } from 'react-icons/bi';
 function DashboardDrawer() {
   return (
     <HStack justify={'end'}>
-      <Menu>
+      <Menu placement={'bottom-end'}>
         <MenuButton
           as={Button}
           aria-label="Dashboard Options"
@@ -26,7 +26,7 @@ function DashboardDrawer() {
           Options
         </MenuButton>
 
-        <MenuList>
+        <MenuList bgColor={'gray.200'}>
           <MenuItem icon={<BiExit />}>SignOut</MenuItem>
           <MenuItem icon={<FaDiscord />}>Discord</MenuItem>
           <MenuItem icon={<BsClipboardCheck />}>

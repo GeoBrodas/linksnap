@@ -33,6 +33,10 @@ const theme = extendTheme({
         orange: {
           color: '#a7a9be',
         },
+        white: {
+          color: '#0f0e17',
+          fontWeight: 'normal',
+        },
       },
     },
   },
