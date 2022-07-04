@@ -1,8 +1,12 @@
 import { Stack, Button } from '@chakra-ui/react';
+import DashboardDrawer from '../components/dashboard/DashboardDrawer';
 
-function DashboardLayout({ children }) {
+function DashboardLayout({ children, ...props }) {
   return (
     <Stack position={'relative'} width={'60vw'} margin={'8rem auto 0'}>
+      {/* Signout - github - discord dropdown */}
+      <DashboardDrawer />
+
       <Stack position="relative">
         {/* overlay for Saving Button */}
         <Stack

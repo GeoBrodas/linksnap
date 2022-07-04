@@ -28,6 +28,13 @@ const theme = extendTheme({
         },
       },
     },
+    FormLabel: {
+      variants: {
+        orange: {
+          color: '#a7a9be',
+        },
+      },
+    },
   },
 
   styles: {

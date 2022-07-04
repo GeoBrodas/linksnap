@@ -1,6 +1,7 @@
 import DashboardLayout from '../../layouts/DashboardLayout';
-import { HStack, Stack, Text, VStack, Heading } from '@chakra-ui/react';
+import { HStack, Text, VStack, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
+import EditProfileForm from './EditProfileForm';
 
 function Dashboard() {
   return (
@@ -11,13 +12,16 @@ function Dashboard() {
 
       <HStack>
         <Heading fontSize={'2xl'} variant={'orange'}>
-          Dashboard
+          Edit your profile
         </Heading>
       </HStack>
 
       <VStack alignItems={'flex-start'}>
         <Text variant={'orange'}>Spin up your DevTree profile now!</Text>
       </VStack>
+
+      {/* Profile Form */}
+      <EditProfileForm />
     </DashboardLayout>
   );
 }
