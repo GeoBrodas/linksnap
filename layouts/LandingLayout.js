@@ -2,6 +2,8 @@ import { Heading, HStack, Stack, Button } from '@chakra-ui/react';
 import { navlinks } from '../utils/landing-links';
 import Link from 'next/link';
 
+import { IoIosArrowForward } from 'react-icons/io';
+
 function LandingLayout({ children, ...props }) {
   return (
     <Stack padding={'3rem'} bgColor="#0f0e17">
@@ -19,6 +21,21 @@ function LandingLayout({ children, ...props }) {
               </Button>
             </Link>
           ))}
+
+          {/* Go to Dashboard */}
+          <Link passHref href="/dashboard">
+            <Button
+              rightIcon={<IoIosArrowForward />}
+              variant={'outline'}
+              color={'#fffffe'}
+              _hover={{
+                bg: '#fffffe',
+                color: '#0f0e17',
+              }}
+            >
+              Go to Dashboard
+            </Button>
+          </Link>
         </HStack>
       </HStack>
 
