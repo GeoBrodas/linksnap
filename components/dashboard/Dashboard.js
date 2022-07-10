@@ -2,6 +2,7 @@ import DashboardLayout from '../../layouts/DashboardLayout';
 import { HStack, Text, VStack, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import EditBio from './EditBio';
+import SocialLinks from './SocialLinks';
 
 function Dashboard() {
   return (
@@ -26,6 +27,9 @@ function Dashboard() {
 
       {/* Profile Form */}
       <EditBio />
+
+      {/* Social links */}
+      <SocialLinks />
     </DashboardLayout>
   );
 }
