@@ -8,8 +8,16 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { BiPhoneIncoming } from 'react-icons/bi';
+import { useFormContext } from 'react-hook-form';
 
 function EditBio() {
+  const { register } = useFormContext({
+    defaultValues: {
+      Name: '',
+      Occupation: '',
+    },
+  });
+
   return (
     <Stack
       style={{
@@ -28,6 +36,9 @@ function EditBio() {
             Widely recognised as
           </FormLabel>
           <Input
+            {...register('Name', {
+              required: true,
+            })}
             bgColor={'gray.200'}
             variant={'filled'}
             placeholder="John Doe"
@@ -43,6 +54,9 @@ function EditBio() {
             Occupation
           </FormLabel>
           <Input
+            {...register('Occupation', {
+              required: true,
+            })}
             type={'text'}
             bgColor={'gray.200'}
             variant={'filled'}
