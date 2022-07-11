@@ -1,13 +1,7 @@
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
-import { BsGithub, BsTwitter } from 'react-icons/bs';
+import { Stack, Text } from '@chakra-ui/react';
+import { BsFacebook, BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs';
+import { SiHashnode } from 'react-icons/si';
+import { FaDev } from 'react-icons/fa';
 import SocialInputElement from './social/SocialInputElement';
 
 function SocialLinks() {
@@ -27,14 +21,40 @@ function SocialLinks() {
       <Stack flexDirection="row" spacing={0}>
         <SocialInputElement
           icon={<BsGithub />}
-          placeholder="America Chavez"
+          placeholder="leerob"
           label="GitHub"
         />
         <SocialInputElement
           marginLeft={true}
           icon={<BsTwitter />}
-          placeholder="Elon Musk"
-          label="GitHub"
+          placeholder="@elonmusk"
+          label="Twitter"
+        />
+      </Stack>
+      <Stack flexDirection="row" spacing={0}>
+        <SocialInputElement
+          icon={<BsLinkedin />}
+          placeholder="Tanmay Bhat"
+          label="LinkedIn"
+        />
+        <SocialInputElement
+          marginLeft={true}
+          icon={<BsFacebook />}
+          placeholder="markzuckerberg"
+          label="Facebook"
+        />
+      </Stack>
+      <Stack flexDirection="row" spacing={0}>
+        <SocialInputElement
+          icon={<SiHashnode />}
+          placeholder="@eleftheriabatsou"
+          label="Hashnode"
+        />
+        <SocialInputElement
+          marginLeft={true}
+          icon={<FaDev />}
+          placeholder="thepracticaldev"
+          label="Dev.to"
         />
       </Stack>
     </Stack>
