@@ -1,13 +1,8 @@
 import { createContext, useContext, useState } from 'react';
-import { useForm } from 'react-hook-form';
 
 const Context = createContext({
   isLoading: false,
   setIsLoading: () => {},
-  register: () => {},
-  reset: () => {},
-  handleSubmit: () => {},
-  getValues: () => {},
 });
 
 const ProfileFormProvider = ({ children }) => {

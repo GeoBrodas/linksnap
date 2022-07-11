@@ -1,7 +1,10 @@
 import { Stack, Button, Text } from '@chakra-ui/react';
-import DashboardDrawer from '../components/dashboard/DashboardDrawer';
-import ProfileFormProvider from '../context/profile-form';
 import { useForm, FormProvider } from 'react-hook-form';
+
+// contexts and components
+import ProfileFormProvider from '../context/profile-form';
+import DashboardDrawer from '../components/dashboard/DashboardDrawer';
+import Footer from '../components/dashboard/layout-component/Footer';
 
 function DashboardLayout({ children, ...props }) {
   const methods = useForm();
@@ -29,7 +32,6 @@ function DashboardLayout({ children, ...props }) {
               >
                 <Button
                   type={'submit'}
-                  form="hook-form"
                   // zooom animation
                   _hover={{
                     transform: 'scale(1.06)',
@@ -49,23 +51,7 @@ function DashboardLayout({ children, ...props }) {
           </Stack>
 
           {/* Footer */}
-          <Stack
-            style={{
-              margin: '6rem 0 0',
-              width: '100%',
-            }}
-            bgColor={'#fffffe'}
-            paddingY={'2rem'}
-          >
-            <Stack width={'60vw'} marginX={'auto'}>
-              <Text color={'gray.500'}>
-                ©{new Date().getFullYear()} DevTree. All rights reserved
-              </Text>
-              <Text color={'gray.500'} fontStyle={'italic'}>
-                Built using Chakra-Ui💖 + PlanetScale🚀
-              </Text>
-            </Stack>
-          </Stack>
+          <Footer />
         </Stack>
       </FormProvider>
     </ProfileFormProvider>

@@ -6,15 +6,21 @@ import {
   InputLeftElement,
   Stack,
   Text,
+  FormHelperText,
 } from '@chakra-ui/react';
 import { BiPhoneIncoming } from 'react-icons/bi';
 import { useFormContext } from 'react-hook-form';
 
 function EditBio() {
-  const { register } = useFormContext({
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext({
     defaultValues: {
       Name: '',
       Occupation: '',
+      email: '',
+      country: '',
     },
   });
 
@@ -37,12 +43,15 @@ function EditBio() {
           </FormLabel>
           <Input
             {...register('Name', {
-              required: true,
+              required: 'Name is required',
             })}
             bgColor={'gray.200'}
             variant={'filled'}
             placeholder="John Doe"
           />
+          {errors.Name && (
+            <FormHelperText>{errors.Name.message}</FormHelperText>
+          )}
         </FormControl>
 
         <FormControl
@@ -55,13 +64,17 @@ function EditBio() {
           </FormLabel>
           <Input
             {...register('Occupation', {
-              required: true,
+              required: 'Occupation is required',
             })}
             type={'text'}
             bgColor={'gray.200'}
             variant={'filled'}
             placeholder="Professional Poker Player"
           />
+
+          {errors.Occupation && (
+            <FormHelperText>{errors.Occupation.message}</FormHelperText>
+          )}
         </FormControl>
       </Stack>
       <Stack flexDirection={'row'} spacing={0}>
@@ -78,12 +91,22 @@ function EditBio() {
             />
 
             <Input
+              {...register('email', {
+                required: 'This field is required',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: 'Enter valid email id',
+                },
+              })}
               bgColor={'gray.200'}
               variant={'filled'}
               placeholder="john@doe.com"
               type="email"
             />
           </InputGroup>
+          {errors.email && (
+            <FormHelperText>{errors.email.message}</FormHelperText>
+          )}
         </FormControl>
 
         <FormControl
@@ -95,11 +118,17 @@ function EditBio() {
             Country of origin
           </FormLabel>
           <Input
+            {...register('country', {
+              required: 'Please enter your country of origin',
+            })}
             type={'text'}
             bgColor={'gray.200'}
             variant={'filled'}
             placeholder="Wakanda"
           />
+          {errors.country && (
+            <FormHelperText>{errors.country.message}</FormHelperText>
+          )}
         </FormControl>
       </Stack>
     </Stack>
