@@ -13,6 +13,12 @@ function DashboardLayout({ children, ...props }) {
     console.log(data);
   };
 
+  function hideButton() {
+    const { Name, Occupation, email, country } = methods.watch();
+
+    if (!Name || !Occupation || !email || !country) return true;
+  }
+
   return (
     <ProfileFormProvider>
       <FormProvider {...methods}>
@@ -31,6 +37,7 @@ function DashboardLayout({ children, ...props }) {
                 right="0"
               >
                 <Button
+                  hidden={hideButton()}
                   type={'submit'}
                   // zooom animation
                   _hover={{
