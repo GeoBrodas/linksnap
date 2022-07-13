@@ -63,7 +63,7 @@ function EditBio() {
             Occupation
           </FormLabel>
           <Input
-            {...register('Occupation', {
+            {...register('occupation', {
               required: 'Occupation is required',
             })}
             type={'text'}
