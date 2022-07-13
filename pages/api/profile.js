@@ -9,6 +9,12 @@ async function handler(req, res) {
 
     case 'POST':
       return postProfile(req, res);
+
+    default:
+      return res.status(405).json({
+        status: 405,
+        message: 'Method not allowed',
+      });
   }
 }
 
@@ -32,16 +38,42 @@ async function postProfile(req, res) {
     });
 
   // check if user with github username already exists
-  const user = await prisma.user.findMany({
+  const user = await prisma.user.findUnique({
     where: {
       github: github,
     },
   });
 
   if (user.length !== 0) {
-    console.log(user);
-    return res.status(400).json({
-      message: 'User already exists',
+    // update user profile
+    try {
+      await prisma.user.update({
+        where: {
+          github: github,
+        },
+        data: {
+          name: name,
+          occupation: occupation,
+          country: country,
+          email: email,
+          linkedin: linkedin,
+          facebook: facebook,
+          twitter: twitter,
+          devto: devto,
+          hashnode: hashnode,
+        },
+      });
+    } catch (e) {
+      console.log(e);
+      return res.status(500).json({
+        message: 'Internal server error',
+      });
+    } finally {
+      await prisma.$disconnect();
+    }
+
+    return res.status(200).json({
+      message: 'Profile updated',
     });
   }
 
