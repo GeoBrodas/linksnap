@@ -5,9 +5,11 @@ import {
   InputGroup,
   InputLeftElement,
 } from '@chakra-ui/react';
-import { BsGithub } from 'react-icons/bs';
+import { useFormContext } from 'react-hook-form';
 
 function SocialInputElement({ icon, placeholder, label, marginLeft }) {
+  const { register } = useFormContext();
+
   return (
     <FormControl
       style={{
@@ -20,6 +22,9 @@ function SocialInputElement({ icon, placeholder, label, marginLeft }) {
       <InputGroup>
         <InputLeftElement>{icon}</InputLeftElement>
         <Input
+          {...register(label.toLowerCase(), {
+            required: label === 'GitHub' ? true : false,
+          })}
           bgColor={'gray.200'}
           variant={'filled'}
           placeholder={placeholder}

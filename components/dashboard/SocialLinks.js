@@ -54,7 +54,7 @@ function SocialLinks() {
           marginLeft={true}
           icon={<FaDev />}
           placeholder="thepracticaldev"
-          label="Dev.to"
+          label="Devto"
         />
       </Stack>
     </Stack>
