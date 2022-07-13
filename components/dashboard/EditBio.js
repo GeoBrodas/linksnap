@@ -17,8 +17,8 @@ function EditBio() {
     formState: { errors },
   } = useFormContext({
     defaultValues: {
-      Name: '',
-      Occupation: '',
+      name: '',
+      occupation: '',
       email: '',
       country: '',
     },
@@ -42,15 +42,15 @@ function EditBio() {
             Widely recognised as
           </FormLabel>
           <Input
-            {...register('Name', {
+            {...register('name', {
               required: 'Name is required',
             })}
             bgColor={'gray.200'}
             variant={'filled'}
             placeholder="John Doe"
           />
-          {errors.Name && (
-            <FormHelperText>{errors.Name.message}</FormHelperText>
+          {errors.name && (
+            <FormHelperText>{errors.name.message}</FormHelperText>
           )}
         </FormControl>
 
@@ -72,8 +72,8 @@ function EditBio() {
             placeholder="Professional Poker Player"
           />
 
-          {errors.Occupation && (
-            <FormHelperText>{errors.Occupation.message}</FormHelperText>
+          {errors.occupation && (
+            <FormHelperText>{errors.occupation.message}</FormHelperText>
           )}
         </FormControl>
       </Stack>

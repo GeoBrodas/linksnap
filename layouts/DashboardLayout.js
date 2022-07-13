@@ -14,9 +14,9 @@ function DashboardLayout({ children, ...props }) {
   };
 
   function hideButton() {
-    const { Name, Occupation, email, country, github } = methods.watch();
+    const { name, occupation, email, country, github } = methods.watch();
 
-    if (!Name || !Occupation || !email || !country || !github) return true;
+    if (!name || !occupation || !email || !country || !github) return true;
   }
 
   return (
