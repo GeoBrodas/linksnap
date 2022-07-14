@@ -3,6 +3,8 @@ const prisma = new PrismaClient();
 
 async function handler(req, res) {
   // protect apt route using getSession
+
+  // and check if session.user.username is same as req.body.github
   switch (req.method) {
     case 'GET':
       return getProfile(req, res);

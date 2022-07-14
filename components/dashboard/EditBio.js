@@ -17,7 +17,7 @@ function EditBio() {
     formState: { errors },
   } = useFormContext({
     defaultValues: {
-      name: '',
+      name: 'Geo',
       occupation: '',
       email: '',
       country: '',

@@ -7,14 +7,12 @@ import {
 } from '@chakra-ui/react';
 import { useFormContext } from 'react-hook-form';
 
-function SocialInputElement({
-  icon,
-  placeholder,
-  label,
-  marginLeft,
-  disabled,
-}) {
-  const { register } = useFormContext();
+function SocialInputElement({ icon, placeholder, label, marginLeft }) {
+  const { register } = useFormContext({
+    defaultValues: {
+      github: 'GeoBrodas',
+    },
+  });
 
   // fetch session data and display on github input field
 
@@ -30,14 +28,11 @@ function SocialInputElement({
       <InputGroup>
         <InputLeftElement>{icon}</InputLeftElement>
         <Input
-          value={label === 'GitHub' ? 'GeoBrodas' : ''}
-          disabled={disabled}
-          {...register(label.toLowerCase(), {
-            required: label === 'GitHub' ? true : false,
-          })}
+          disabled={label === 'GitHub' && true}
+          {...register(label.toLowerCase())}
           bgColor={'gray.200'}
           variant={'filled'}
-          placeholder={placeholder}
+          placeholder={label === 'GitHub' ? 'GeoBrodas' : placeholder}
         />
       </InputGroup>
     </FormControl>

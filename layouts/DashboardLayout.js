@@ -5,18 +5,35 @@ import { useForm, FormProvider } from 'react-hook-form';
 import ProfileFormProvider from '../context/profile-form';
 import DashboardDrawer from '../components/dashboard/DashboardDrawer';
 import Footer from '../components/dashboard/layout-component/Footer';
+import { useState } from 'react';
 
 function DashboardLayout({ children, ...props }) {
   const methods = useForm();
+  const [loading, setIsLoading] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    // if (data.github !== session.user.username)
+    //   return alert('Github username must match your current username');
+
+    setIsLoading(true);
+    const res = await fetch('/api/profile', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ ...data, github: 'GeoBrodas' }),
+    });
+
+    const message = await res.json();
+    setIsLoading(false);
+    console.log(message);
   };
 
   function hideButton() {
-    const { name, occupation, email, country, github } = methods.watch();
+    const { name, occupation, email, country } = methods.watch();
 
-    if (!name || !occupation || !email || !country || !github) return true;
+    if (!name || !occupation || !email || !country) return true;
   }
 
   return (
@@ -37,6 +54,8 @@ function DashboardLayout({ children, ...props }) {
                 right="0"
               >
                 <Button
+                  isLoading={loading}
+                  loadingText={'Saving...'}
                   hidden={hideButton()}
                   type={'submit'}
                   // zooom animation
