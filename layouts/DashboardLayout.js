@@ -27,6 +27,15 @@ function DashboardLayout({ children, ...props }) {
 
     const message = await res.json();
     setIsLoading(false);
+
+    try {
+      fetch(
+        `/api/revalidate/GeoBrodas?secret=${process.env.NEXT_PUBLIC_MY_SECRET_TOKEN}`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+
     console.log(message);
   };
 

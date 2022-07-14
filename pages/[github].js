@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
 function DevTreeProfilePage({ user }) {
+  console.log(user);
   return <div>DevTreeProfilePage</div>;
 }
 
