@@ -3,6 +3,7 @@ import { SiGithub } from 'react-icons/si';
 import { signIn } from 'next-auth/react';
 
 import Container from './Container';
+import Link from 'next/link';
 
 function Hero() {
   return (
@@ -19,19 +20,20 @@ function Hero() {
       </Stack>
 
       {/* Button */}
-      <Button
-        onClick={() => signIn('github', { redirect: true })}
-        width={'fit-content'}
-        style={{
-          marginTop: '2rem',
-        }}
-        variant={'orange'}
-        fontSize={'1rem'}
-        iconSpacing={'1rem'}
-        leftIcon={<SiGithub fontSize={'1.5rem'} />}
-      >
-        Sign Up with GitHub
-      </Button>
+      <Link href="/auth/sign-in" passHref>
+        <Button
+          width={'fit-content'}
+          style={{
+            marginTop: '2rem',
+          }}
+          variant={'orange'}
+          fontSize={'1rem'}
+          iconSpacing={'1rem'}
+          leftIcon={<SiGithub fontSize={'1.5rem'} />}
+        >
+          Sign Up with GitHub
+        </Button>
+      </Link>
     </Container>
   );
 }
