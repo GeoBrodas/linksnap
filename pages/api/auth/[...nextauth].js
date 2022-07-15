@@ -9,4 +9,7 @@ export default NextAuth({
     }),
   ],
   secret: process.env.AUTH_SECRET,
+  pages: {
+    signIn: '/auth/sign-in',
+  },
 });

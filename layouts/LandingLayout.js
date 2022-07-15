@@ -3,8 +3,11 @@ import { navlinks } from '../utils/landing-links';
 import Link from 'next/link';
 
 import { IoIosArrowForward } from 'react-icons/io';
+import { useSession } from 'next-auth/react';
 
 function LandingLayout({ children, ...props }) {
+  const { data: session } = useSession();
+
   return (
     <Stack padding={'3rem'} bgColor="#0f0e17">
       {/* Navbar */}
@@ -23,19 +26,21 @@ function LandingLayout({ children, ...props }) {
           ))}
 
           {/* Go to Dashboard */}
-          <Link passHref href="/dashboard">
-            <Button
-              rightIcon={<IoIosArrowForward />}
-              variant={'outline'}
-              color={'#fffffe'}
-              _hover={{
-                bg: '#fffffe',
-                color: '#0f0e17',
-              }}
-            >
-              Go to Dashboard
-            </Button>
-          </Link>
+          {session?.user && (
+            <Link passHref href="/dashboard">
+              <Button
+                rightIcon={<IoIosArrowForward />}
+                variant={'outline'}
+                color={'#fffffe'}
+                _hover={{
+                  bg: '#fffffe',
+                  color: '#0f0e17',
+                }}
+              >
+                Go to Dashboard
+              </Button>
+            </Link>
+          )}
         </HStack>
       </HStack>
 
