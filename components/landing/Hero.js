@@ -1,11 +1,13 @@
-import { Stack, Heading, Text, Button } from '@chakra-ui/react';
-import { SiGithub } from 'react-icons/si';
-import { signIn } from 'next-auth/react';
+import { Stack, Heading, Text } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
 
 import Container from './Container';
-import Link from 'next/link';
+import RepoCTA from './ui/RepoCTA';
+import SignWithGitHub from './ui/SignWithGitHub';
 
 function Hero() {
+  const { data: session } = useSession();
+
   return (
     <Container>
       <Stack width={{ base: 'full', lg: '50%' }} spacing={5}>
@@ -20,20 +22,7 @@ function Hero() {
       </Stack>
 
       {/* Button */}
-      <Link href="/auth/sign-in" passHref>
-        <Button
-          width={'fit-content'}
-          style={{
-            marginTop: '2rem',
-          }}
-          variant={'orange'}
-          fontSize={'1rem'}
-          iconSpacing={'1rem'}
-          leftIcon={<SiGithub fontSize={'1.5rem'} />}
-        >
-          Sign Up with GitHub
-        </Button>
-      </Link>
+      {!session ? <SignWithGitHub /> : <RepoCTA />}
     </Container>
   );
 }
