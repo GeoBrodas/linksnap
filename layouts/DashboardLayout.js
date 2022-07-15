@@ -1,4 +1,4 @@
-import { Stack, Button, Text } from '@chakra-ui/react';
+import { Stack, Button } from '@chakra-ui/react';
 import { useForm, FormProvider } from 'react-hook-form';
 
 // contexts and components

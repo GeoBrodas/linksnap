@@ -8,6 +8,9 @@ import {
   MenuList,
 } from '@chakra-ui/react';
 
+// auth
+import { signOut } from 'next-auth/react';
+
 // icons
 import { VscChevronDown } from 'react-icons/vsc';
 import { FaDiscord } from 'react-icons/fa';
@@ -27,7 +30,9 @@ function DashboardDrawer() {
         </MenuButton>
 
         <MenuList bgColor={'gray.200'}>
-          <MenuItem icon={<BiExit />}>SignOut</MenuItem>
+          <MenuItem icon={<BiExit />} onClick={() => signOut()}>
+            SignOut
+          </MenuItem>
           <MenuItem icon={<FaDiscord />}>Discord</MenuItem>
           <MenuItem icon={<BsClipboardCheck />}>
             Copy Link To Clipboard

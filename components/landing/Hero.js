@@ -1,5 +1,7 @@
-import { Stack, Heading, Text, VStack, Button } from '@chakra-ui/react';
+import { Stack, Heading, Text, Button } from '@chakra-ui/react';
 import { SiGithub } from 'react-icons/si';
+import { signIn } from 'next-auth/react';
+
 import Container from './Container';
 
 function Hero() {
@@ -18,6 +20,7 @@ function Hero() {
 
       {/* Button */}
       <Button
+        onClick={() => signIn('github', { redirect: true })}
         width={'fit-content'}
         style={{
           marginTop: '2rem',
