@@ -1,10 +1,10 @@
-### DevTree - The LinkTree for developers
+### Linksnap - The LinkTree for developers
 
 ---
 
-#### What's DevTree?
+#### What's Linksnap?
 
-DevTree is a LinkTree alternative for developers to showcase their activity across different platforms like GitHub, Hashnode, Dev.to.
+Linksnap is a LinkTree alternative for developers to showcase their activity across different platforms like GitHub, Hashnode, Dev.to.
 
 #### ✨ Features
 
@@ -19,7 +19,7 @@ DevTree is a LinkTree alternative for developers to showcase their activity acro
 - [ ] Customize the theme on your profile.
 - [ ] PWA Support
 
-#### 🚀Tech Stack
+#### 🚀 Tech Stack
 
 - PlanetScale
 - Next.js
