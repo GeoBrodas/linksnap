@@ -26,31 +26,31 @@ function DashboardLayout({ children, ...props }) {
     setIsLoading(true);
     // check if someone has used the github name already!
 
-    const res = await fetch('/api/profile', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        ...data,
-        imgUrl: session.user.image,
-        theme: 'dark',
-      }),
-    });
-
-    const message = await res.json();
-    setIsLoading(false);
-
     try {
+      const res = await fetch('/api/profile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          imgUrl: session.user.image,
+          theme: 'dark',
+        }),
+      });
+
+      const message = await res.json();
+
+      console.log(message);
+      setIsLoading(false);
+
       fetch(
         `/api/revalidate/GeoBrodas?secret=${process.env.NEXT_PUBLIC_MY_SECRET_TOKEN}`
       );
     } catch (error) {
       console.log(error);
     }
-
-    console.log(message);
   };
 
   function hideButton() {

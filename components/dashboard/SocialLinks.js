@@ -4,7 +4,7 @@ import { SiHashnode } from 'react-icons/si';
 import { FaDev } from 'react-icons/fa';
 import SocialInputElement from './social/SocialInputElement';
 
-function SocialLinks() {
+function SocialLinks({ user }) {
   return (
     <Stack
       style={{
@@ -23,12 +23,14 @@ function SocialLinks() {
           icon={<BsGithub />}
           placeholder="leerob"
           label="GitHub"
+          value={user?.github}
         />
         <SocialInputElement
           marginLeft={true}
           icon={<BsTwitter />}
           placeholder="@elonmusk"
           label="Twitter"
+          value={user?.twitter}
         />
       </Stack>
       <Stack flexDirection="row" spacing={0}>
@@ -36,12 +38,14 @@ function SocialLinks() {
           icon={<BsLinkedin />}
           placeholder="Tanmay Bhat"
           label="LinkedIn"
+          value={user?.linkedin}
         />
         <SocialInputElement
           marginLeft={true}
           icon={<BsFacebook />}
           placeholder="markzuckerberg"
           label="Facebook"
+          value={user?.facebook}
         />
       </Stack>
       <Stack flexDirection="row" spacing={0}>
@@ -49,12 +53,14 @@ function SocialLinks() {
           icon={<SiHashnode />}
           placeholder="@eleftheriabatsou"
           label="Hashnode"
+          value={user?.hashnode}
         />
         <SocialInputElement
           marginLeft={true}
           icon={<FaDev />}
           placeholder="thepracticaldev"
           label="Devto"
+          value={user?.devto}
         />
       </Stack>
     </Stack>

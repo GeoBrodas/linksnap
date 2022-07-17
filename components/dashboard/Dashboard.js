@@ -4,9 +4,9 @@ import Head from 'next/head';
 import EditBio from './EditBio';
 import SocialLinks from './SocialLinks';
 
-function Dashboard() {
+function Dashboard({ user }) {
   return (
-    <DashboardLayout>
+    <DashboardLayout user={user}>
       <Head>
         <title>Dashboard</title>
       </Head>
@@ -26,10 +26,10 @@ function Dashboard() {
       </VStack>
 
       {/* Profile Form */}
-      <EditBio />
+      <EditBio user={user} />
 
       {/* Social links */}
-      <SocialLinks />
+      <SocialLinks user={user} />
     </DashboardLayout>
   );
 }

@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { useFormContext } from 'react-hook-form';
 
-function SocialInputElement({ icon, placeholder, label, marginLeft }) {
+function SocialInputElement({ icon, placeholder, label, marginLeft, value }) {
   const { register } = useFormContext();
 
   return (
@@ -24,6 +24,7 @@ function SocialInputElement({ icon, placeholder, label, marginLeft }) {
         <Input
           {...register(label.toLowerCase(), {
             required: label === 'GitHub' ? 'Enter your github username' : false,
+            value: value ? value : '',
           })}
           bgColor={'gray.200'}
           variant={'filled'}

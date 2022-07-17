@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <LandingLayout>
       <Head>
-        <title>DevTree</title>
+        <title>Linksnap: Gotta catch&apos;em all</title>
         <meta name="description" content="PlanetScale Quickstart for Next.js" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -16,20 +16,3 @@ export default function Home() {
     </LandingLayout>
   );
 }
-
-// export async function getStaticProps(context) {
-//   const data = await prisma.product.findMany({
-//     include: {
-//       category: true,
-//     },
-//   });
-
-//   //convert decimal value to string to pass through as json
-//   const products = data.map((product) => ({
-//     ...product,
-//     price: product.price.toString(),
-//   }));
-//   return {
-//     props: { products },
-//   };
-// }

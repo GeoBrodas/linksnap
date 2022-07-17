@@ -11,18 +11,11 @@ import {
 import { BiPhoneIncoming } from 'react-icons/bi';
 import { useFormContext } from 'react-hook-form';
 
-function EditBio() {
+function EditBio({ user }) {
   const {
     register,
     formState: { errors },
-  } = useFormContext({
-    defaultValues: {
-      name: 'Geo',
-      occupation: '',
-      email: '',
-      country: '',
-    },
-  });
+  } = useFormContext();
 
   return (
     <Stack
@@ -44,6 +37,7 @@ function EditBio() {
           <Input
             {...register('name', {
               required: 'Name is required',
+              value: user ? user.name : '',
             })}
             bgColor={'gray.200'}
             variant={'filled'}
@@ -65,6 +59,7 @@ function EditBio() {
           <Input
             {...register('occupation', {
               required: 'Occupation is required',
+              value: user ? user.occupation : '',
             })}
             type={'text'}
             bgColor={'gray.200'}
@@ -93,6 +88,7 @@ function EditBio() {
             <Input
               {...register('email', {
                 required: 'This field is required',
+                value: user ? user.email : '',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                   message: 'Enter valid email id',
@@ -120,6 +116,7 @@ function EditBio() {
           <Input
             {...register('country', {
               required: 'Please enter your country of origin',
+              value: user ? user.country : '',
             })}
             type={'text'}
             bgColor={'gray.200'}

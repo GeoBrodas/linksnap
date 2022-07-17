@@ -1,12 +1,18 @@
+import { PrismaClient } from '@prisma/client';
 import { getSession } from 'next-auth/react';
 import Dashboard from '../../components/dashboard/Dashboard';
 
-function DashboardPage() {
-  return <Dashboard />;
+function DashboardPage({ user }) {
+  return <Dashboard user={user} />;
 }
 
-export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
+export async function getServerSideProps({ req, res }) {
+  const session = await getSession({ req: req });
+
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  );
 
   if (!session) {
     return {
@@ -17,9 +23,25 @@ export async function getServerSideProps(context) {
     };
   }
 
+  const prisma = new PrismaClient();
+  let user;
+  // fetch data
+  try {
+    user = await prisma.user.findUnique({
+      where: {
+        email: session.user.email,
+      },
+    });
+  } catch (e) {
+    console.log(e);
+  } finally {
+    prisma.$disconnect();
+  }
+
   return {
     props: {
       session,
+      user,
     },
   };
 }
