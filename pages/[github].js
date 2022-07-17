@@ -27,6 +27,8 @@ export async function getStaticProps(context) {
 
   const prisma = new PrismaClient();
 
+  console.log('Running static props');
+
   const user = await prisma.user.findUnique({
     where: {
       github: github,

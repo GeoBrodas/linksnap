@@ -8,13 +8,7 @@ import {
 import { useFormContext } from 'react-hook-form';
 
 function SocialInputElement({ icon, placeholder, label, marginLeft }) {
-  const { register } = useFormContext({
-    defaultValues: {
-      github: 'GeoBrodas',
-    },
-  });
-
-  // fetch session data and display on github input field
+  const { register } = useFormContext();
 
   return (
     <FormControl
@@ -28,11 +22,12 @@ function SocialInputElement({ icon, placeholder, label, marginLeft }) {
       <InputGroup>
         <InputLeftElement>{icon}</InputLeftElement>
         <Input
-          disabled={label === 'GitHub' && true}
-          {...register(label.toLowerCase())}
+          {...register(label.toLowerCase(), {
+            required: label === 'GitHub' ? 'Enter your github username' : false,
+          })}
           bgColor={'gray.200'}
           variant={'filled'}
-          placeholder={label === 'GitHub' ? 'GeoBrodas' : placeholder}
+          placeholder={placeholder}
         />
       </InputGroup>
     </FormControl>

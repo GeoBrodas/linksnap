@@ -1,28 +1,42 @@
-import { Stack, Button } from '@chakra-ui/react';
+import { Stack, Button, Alert } from '@chakra-ui/react';
 import { useForm, FormProvider } from 'react-hook-form';
+import { PrismaClient } from '@prisma/client';
 
 // contexts and components
 import ProfileFormProvider from '../context/profile-form';
 import DashboardDrawer from '../components/dashboard/DashboardDrawer';
 import Footer from '../components/dashboard/layout-component/Footer';
 import { useState } from 'react';
+import { useSession } from 'next-auth/react';
 
 function DashboardLayout({ children, ...props }) {
   const methods = useForm();
   const [loading, setIsLoading] = useState(false);
+  const { data: session } = useSession();
 
   const onSubmit = async (data) => {
-    // if (data.github !== session.user.username)
-    //   return alert('Github username must match your current username');
+    if (!session.user)
+      return Alert(
+        'You are not logged in, if this persists, please contact support.'
+      );
+
+    if (session.user.email !== data.email)
+      return alert('Use your respective email to update your profile');
 
     setIsLoading(true);
+    // check if someone has used the github name already!
+
     const res = await fetch('/api/profile', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({ ...data, github: 'GeoBrodas' }),
+      body: JSON.stringify({
+        ...data,
+        imgUrl: session.user.image,
+        theme: 'dark',
+      }),
     });
 
     const message = await res.json();
@@ -40,9 +54,9 @@ function DashboardLayout({ children, ...props }) {
   };
 
   function hideButton() {
-    const { name, occupation, email, country } = methods.watch();
+    const { name, occupation, email, country, github } = methods.watch();
 
-    if (!name || !occupation || !email || !country) return true;
+    if (!name || !occupation || !email || !country || !github) return true;
   }
 
   return (

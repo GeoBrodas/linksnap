@@ -1,17 +1,18 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+import { getToken } from 'next-auth/jwt';
+
+const secret = process.env.NEXTAUTH_SECRET;
 
 async function handler(req, res) {
   // protect apt route using getSession
+  const token = await getToken({ req, secret });
 
-  // and check if session.user.username is same as req.body.github
   switch (req.method) {
     case 'GET':
       return getProfile(req, res);
-
     case 'POST':
-      return postProfile(req, res);
-
+      return postProfile(req, res, token);
     default:
       return res.status(405).json({
         status: 405,
@@ -20,7 +21,7 @@ async function handler(req, res) {
   }
 }
 
-async function postProfile(req, res) {
+async function postProfile(req, res, token) {
   const {
     name,
     occupation,
@@ -32,26 +33,50 @@ async function postProfile(req, res) {
     twitter,
     devto,
     hashnode,
+    imgUrl,
+    theme,
   } = req.body;
 
-  if (!name || !occupation || !country || !email || !github)
+  if (!token)
+    return res.status(401).json({
+      status: 401,
+      message: 'You are not logged in',
+    });
+
+  if (
+    !name ||
+    !occupation ||
+    !country ||
+    !email ||
+    !github ||
+    !imgUrl ||
+    !theme
+  )
     return res.status(400).json({
       message: 'Bad request',
     });
 
+  if (token.email !== email)
+    return res.status(400).json({
+      message: 'You can only update your own profile',
+    });
+
   // check if user with github username already exists
-  const user = await prisma.user.findUnique({
+  const user = await prisma.user.findFirst({
     where: {
-      github: github,
+      email: email,
     },
   });
 
+  console.log(user);
+
   if (user.length !== 0) {
     // update user profile
+    console.log('Updating...');
     try {
       await prisma.user.update({
         where: {
-          github: github,
+          email: email,
         },
         data: {
           name: name,
@@ -63,6 +88,8 @@ async function postProfile(req, res) {
           twitter: twitter,
           devto: devto,
           hashnode: hashnode,
+          imgUrl: imgUrl,
+          theme: theme,
         },
       });
     } catch (e) {
@@ -93,6 +120,8 @@ async function postProfile(req, res) {
         twitter,
         devto,
         hashnode,
+        imgUrl,
+        theme,
       },
     });
 

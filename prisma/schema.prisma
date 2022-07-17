@@ -13,7 +13,9 @@ model user {
     id          Int       @id @default(autoincrement())
     name        String
     occupation  String
-    email       String
+    email       String    @unique
+    imgUrl      String
+    theme       String    @default("dark")
     country     String
     github      String    @unique
     twitter     String?

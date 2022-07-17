@@ -23,7 +23,6 @@ function SocialLinks() {
           icon={<BsGithub />}
           placeholder="leerob"
           label="GitHub"
-          disabled={true}
         />
         <SocialInputElement
           marginLeft={true}
