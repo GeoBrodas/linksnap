@@ -14,10 +14,11 @@ Linksnap is a LinkTree alternative for developers to showcase their activity acr
 
 #### 🔨 Future Upgrades
 
-- [ ] Modify your profile URL
-- [ ] Grab stats from more platforms (Youtube, etc.)
-- [ ] Customize the theme on your profile.
 - [ ] PWA Support
+- [ ] Customize the theme on your profile.
+- [ ] Modify your profile URL.
+- [ ] Dynamic Og images
+- [ ] Grab stats from more platforms (Youtube, etc.)
 
 #### 🚀 Tech Stack
 
