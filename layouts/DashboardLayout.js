@@ -1,4 +1,4 @@
-import { Stack, Button, Alert } from '@chakra-ui/react';
+import { Stack, Button, Alert, useToast } from '@chakra-ui/react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { PrismaClient } from '@prisma/client';
 
@@ -13,6 +13,8 @@ function DashboardLayout({ children, ...props }) {
   const methods = useForm();
   const [loading, setIsLoading] = useState(false);
   const { data: session } = useSession();
+
+  const toast = useToast();
 
   const onSubmit = async (data) => {
     if (!session.user)
@@ -44,17 +46,48 @@ function DashboardLayout({ children, ...props }) {
 
       console.log(message);
       setIsLoading(false);
+      toast({
+        title: message.message,
+        status: 'success',
+        position: 'top-left',
+      });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+      toast({
+        title: 'Something went wrong, please try again',
+        status: 'error',
+        position: 'top-left',
+      });
+    }
 
+    try {
       fetch(
         `/api/revalidate/GeoBrodas?secret=${process.env.NEXT_PUBLIC_MY_SECRET_TOKEN}`
       );
     } catch (error) {
       console.log(error);
+      toast({
+        title:
+          'Error revalidating page, if changes are not saved, try again in some time!',
+        status: 'error',
+        position: 'top-left',
+      });
     }
   };
 
   function hideButton() {
-    const { name, occupation, email, country, github } = methods.watch();
+    const {
+      name,
+      occupation,
+      email,
+      country,
+      github,
+      linkedin,
+      hashnode,
+      devto,
+      facebook,
+    } = methods.watch();
 
     if (!name || !occupation || !email || !country || !github) return true;
   }
