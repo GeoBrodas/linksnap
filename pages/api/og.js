@@ -1,9 +1,6 @@
-import { renderToString } from 'react-dom/server';
-import React from 'react';
 import chromium from 'chrome-aws-lambda';
 
 const getCss = () => `
-
   body {
     background-color: black;
   }
