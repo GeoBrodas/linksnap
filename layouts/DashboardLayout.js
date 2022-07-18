@@ -97,7 +97,7 @@ function DashboardLayout({ children, ...props }) {
         <Stack>
           <Stack position={'relative'} width={'60vw'} margin={'8rem auto 0'}>
             {/* Signout - github - discord dropdown */}
-            <DashboardDrawer />
+            <DashboardDrawer user={props.user.github} />
 
             <Stack position="relative">
               {/* overlay for Saving Button */}

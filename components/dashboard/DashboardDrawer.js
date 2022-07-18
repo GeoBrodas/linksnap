@@ -6,6 +6,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  useToast,
 } from '@chakra-ui/react';
 
 // auth
@@ -17,7 +18,19 @@ import { FaDiscord } from 'react-icons/fa';
 import { BsClipboardCheck } from 'react-icons/bs';
 import { BiExit } from 'react-icons/bi';
 
-function DashboardDrawer() {
+function DashboardDrawer({ user }) {
+  const toast = useToast();
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText(process.env.NEXT_PUBLIC_BASE_URL + user);
+
+    toast({
+      title: 'Copied to clipboard',
+      status: 'success',
+      position: 'top-left',
+    });
+  }
+
   return (
     <HStack justify={'end'}>
       <Menu placement={'bottom-end'}>
@@ -34,8 +47,8 @@ function DashboardDrawer() {
             SignOut
           </MenuItem>
           <MenuItem icon={<FaDiscord />}>Discord</MenuItem>
-          <MenuItem icon={<BsClipboardCheck />}>
-            Copy Link To Clipboard
+          <MenuItem onClick={copyToClipboard} icon={<BsClipboardCheck />}>
+            Copy Link
           </MenuItem>
         </MenuList>
       </Menu>
