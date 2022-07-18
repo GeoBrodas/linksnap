@@ -3,6 +3,7 @@ import { SessionProvider } from 'next-auth/react';
 
 // theme config for Chakra-UI
 import theme from '../styles/theme';
+import '../styles/styles.css';
 
 export default function MyApp({
   Component,

@@ -1,6 +1,5 @@
 import { Stack, Button, Alert, useToast } from '@chakra-ui/react';
 import { useForm, FormProvider } from 'react-hook-form';
-import { PrismaClient } from '@prisma/client';
 
 // contexts and components
 import ProfileFormProvider from '../context/profile-form';

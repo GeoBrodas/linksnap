@@ -1,0 +1,11 @@
+/* add font */
+@font-face {
+  font-family: 'Varela';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/public/fonts/VarelaRound-Regular.ttf) format('ttf');
+}
+
+.logo {
+  font-family: 'Varela';
+}

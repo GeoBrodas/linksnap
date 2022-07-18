@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, theme as base } from '@chakra-ui/react';
 import { StyleFunctionProps } from '@chakra-ui/theme-tools';
 
 const theme = extendTheme({
@@ -25,6 +25,9 @@ const theme = extendTheme({
       variants: {
         orange: {
           color: '#fffffe',
+        },
+        logo: {
+          fontFamily: `'Varela Round' , sans-serif`,
         },
       },
     },

@@ -13,7 +13,14 @@ function LandingLayout({ children, ...props }) {
       {/* Navbar */}
       <HStack justify={'space-between'}>
         {/* Logo */}
-        <Heading color="#fffffe">DevTree</Heading>
+        <Stack flexDirection={'row'} spacing={0}>
+          <Heading variant="logo" color="#fffffe">
+            LINK
+          </Heading>
+          <Heading variant="logo" color="orange.300">
+            SNAP
+          </Heading>
+        </Stack>
 
         {/* Links */}
         <HStack spacing={8}>
