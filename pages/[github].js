@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client';
+import ProfileComponent from '../components/profile-page/ProfileComponent';
 
 function DevTreeProfilePage({ user }) {
-  console.log(user);
-  return <div>DevTreeProfilePage</div>;
+  return <ProfileComponent user={user} />;
 }
 
 export async function getStaticPaths() {
