@@ -1,9 +1,16 @@
+import Head from 'next/head';
 import ProfileLayout from '../../layouts/ProfileLayout';
 import BgProfileImage from './BgProfileImage';
 
 function ProfileComponent({ user }) {
   return (
     <ProfileLayout>
+      <Head>
+        <title>
+          {user.name} - {user.occupation}
+        </title>
+      </Head>
+
       {/* Bg, image component */}
       <BgProfileImage
         name={user?.name}
