@@ -14,8 +14,10 @@ Linksnap is a LinkTree alternative for developers to showcase their activity acr
 
 #### 🔨 Future Upgrades
 
-- [ ] PWA Support
 - [ ] Customize the theme on your profile.
+- [ ] PWA Support
+- [ ] Implement likes on Profile Page
+- [ ] See Profile Insights (views, likes, etc)
 - [ ] Modify your profile URL.
 - [ ] Dynamic Og images
 - [ ] Grab stats from more platforms (Youtube, etc.)

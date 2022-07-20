@@ -19,8 +19,6 @@ function ProfileComponent({ user }) {
         img={user?.imgUrl}
       />
 
-      {/* Place, occupation, github.bio component */}
-
       {/* Social Links all - Twitter, Facebook, etc */}
 
       {/* GitHub stats - total repos, top repo, total stars, total forks recieved */}
