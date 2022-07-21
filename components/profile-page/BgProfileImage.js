@@ -17,15 +17,7 @@ function BgProfileImage({ name, country, occupation, img }) {
         />
 
         {/* Image on top */}
-        <Stack
-          borderWidth={'5px'}
-          borderColor={'whiteAlpha.900'}
-          padding={'2px'}
-          borderRadius={'full'}
-          position={'absolute'}
-          bottom={'0'}
-          left={'2rem'}
-        >
+        <Stack position={'absolute'} bottom={'0'} left={'2rem'}>
           <Image
             src={img}
             alt={name}

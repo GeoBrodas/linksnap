@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { IoIosArrowForward } from 'react-icons/io';
 import { useSession } from 'next-auth/react';
+import Logo from '../components/Logo';
 
 function LandingLayout({ children, ...props }) {
   const { data: session } = useSession();
@@ -13,14 +14,7 @@ function LandingLayout({ children, ...props }) {
       {/* Navbar */}
       <HStack justify={'space-between'}>
         {/* Logo */}
-        <Stack flexDirection={'row'} spacing={0}>
-          <Heading variant="logo" color="#fffffe">
-            LINK
-          </Heading>
-          <Heading variant="logo" color="orange.300">
-            SNAP
-          </Heading>
-        </Stack>
+        <Logo />
 
         {/* Links */}
         <HStack spacing={8}>

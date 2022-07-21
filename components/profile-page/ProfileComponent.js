@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import ProfileLayout from '../../layouts/ProfileLayout';
 import BgProfileImage from './BgProfileImage';
+import SocialLinks from './SocialLinks';
 
 function ProfileComponent({ user }) {
   return (
@@ -20,6 +21,14 @@ function ProfileComponent({ user }) {
       />
 
       {/* Social Links all - Twitter, Facebook, etc */}
+      <SocialLinks
+        twitter={user?.twitter}
+        facebook={user?.facebook}
+        linkedin={user?.linkedin}
+        github={user?.github}
+        devto={user?.devto}
+        hashnode={user?.hashnode}
+      />
 
       {/* GitHub stats - total repos, top repo, total stars, total forks recieved */}
 
