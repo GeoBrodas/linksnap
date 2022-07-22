@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import ProfileComponent from '../components/profile-page/ProfileComponent';
+import { fetchGitHubStats } from '../helpers/fetch-stats';
 
 function DevTreeProfilePage({ user }) {
   return <ProfileComponent user={user} />;
@@ -34,6 +35,12 @@ export async function getStaticProps(context) {
       github: github,
     },
   });
+
+  prisma.$disconnect();
+
+  let gitHubData = await fetchGitHubStats(github);
+
+  console.log('gitHubData', gitHubData);
 
   return {
     props: {

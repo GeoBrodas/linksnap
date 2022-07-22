@@ -133,7 +133,6 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
     >
       {Object.keys(socialLinks).map((key) => {
         if (socialLinks[key]) {
-          console.log(socialLinks[key]);
           return (
             <a
               key={key}

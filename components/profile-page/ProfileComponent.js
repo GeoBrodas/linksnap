@@ -7,9 +7,7 @@ function ProfileComponent({ user }) {
   return (
     <ProfileLayout>
       <Head>
-        <title>
-          {user.name} - {user.occupation}
-        </title>
+        <title>{user.name}</title>
       </Head>
 
       {/* Bg, image component */}
