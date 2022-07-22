@@ -100,6 +100,8 @@ function DashboardLayout({ children, ...props }) {
   function disableButton() {
     if (!props.user.name) return false;
 
+    if (loading) return true;
+
     const {
       name,
       occupation,
