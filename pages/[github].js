@@ -3,8 +3,11 @@ import ProfileComponent from '../components/profile-page/ProfileComponent';
 import { fetchGitHubStats } from '../helpers/fetch-stats';
 
 function DevTreeProfilePage({ user, gitHubData }) {
-  console.log(gitHubData);
-  return <ProfileComponent user={user} gitHubData={gitHubData} />;
+  let githubstats = JSON.parse(gitHubData);
+
+  console.log(githubstats);
+
+  return <ProfileComponent user={user} gitHubData={githubstats} />;
 }
 
 export async function getStaticPaths() {
@@ -41,12 +44,10 @@ export async function getStaticProps(context) {
 
   let gitHubData = await fetchGitHubStats(github);
 
-  console.log('gitHubData', gitHubData);
-
   return {
     props: {
       user,
-      gitHubData,
+      gitHubData: JSON.stringify(gitHubData),
     },
   };
 }
