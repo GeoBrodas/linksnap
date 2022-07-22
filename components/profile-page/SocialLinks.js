@@ -1,4 +1,4 @@
-import { Button, Grid, GridItem, Icon, Stack, Text } from '@chakra-ui/react';
+import { Stack, theme } from '@chakra-ui/react';
 import {
   BsFacebook,
   BsGithub,
@@ -8,6 +8,7 @@ import {
 } from 'react-icons/bs';
 import { FaDev } from 'react-icons/fa';
 import { SiHashnode } from 'react-icons/si';
+import styles from './profile.module.css';
 
 function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
   // make an object of the props
@@ -26,7 +27,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <BsTwitter
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -36,7 +37,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <BsFacebook
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -46,7 +47,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <BsLinkedin
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -56,7 +57,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <BsGithub
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -66,7 +67,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <FaDev
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -76,7 +77,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <SiHashnode
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -86,7 +87,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
         return (
           <BsQuestion
             color={'white'}
-            size={'2rem'}
+            className={styles.logo}
             style={{
               marginRight: '1rem',
             }}
@@ -135,6 +136,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
           console.log(socialLinks[key]);
           return (
             <a
+              key={key}
               href={urlGenerator(key)}
               target="_blank"
               rel="noopener noreferrer"

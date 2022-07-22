@@ -1,0 +1,12 @@
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* add media query to decrease size in mobile devices */
+@media screen and (max-width: 1000px) {
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
+}
