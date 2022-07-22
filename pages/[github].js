@@ -2,8 +2,9 @@ import { PrismaClient } from '@prisma/client';
 import ProfileComponent from '../components/profile-page/ProfileComponent';
 import { fetchGitHubStats } from '../helpers/fetch-stats';
 
-function DevTreeProfilePage({ user }) {
-  return <ProfileComponent user={user} />;
+function DevTreeProfilePage({ user, gitHubData }) {
+  console.log(gitHubData);
+  return <ProfileComponent user={user} gitHubData={gitHubData} />;
 }
 
 export async function getStaticPaths() {
@@ -45,6 +46,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       user,
+      gitHubData,
     },
   };
 }
