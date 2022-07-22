@@ -3,6 +3,18 @@
   height: 30px;
 }
 
+/* hover animation on logo */
+.logo:hover {
+  transform: translateY(-5px);
+  transition: ease-in-out 0.3s;
+}
+
+/* animation end */
+.logo:hover:after {
+  transform: translateY(5px);
+  transition: ease-in-out 0.3s;
+}
+
 /* add media query to decrease size in mobile devices */
 @media screen and (max-width: 1000px) {
   .logo {
