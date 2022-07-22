@@ -76,17 +76,7 @@ function DashboardLayout({ children, ...props }) {
   };
 
   function hideButton() {
-    const {
-      name,
-      occupation,
-      email,
-      country,
-      github,
-      linkedin,
-      hashnode,
-      devto,
-      facebook,
-    } = methods.watch();
+    const { name, occupation, email, country, github } = methods.watch();
 
     if (!name || !occupation || !email || !country || !github) return true;
   }

@@ -1,17 +1,12 @@
 .logo {
   width: 30px;
   height: 30px;
+  transition: ease-in-out 0.2s;
 }
 
 /* hover animation on logo */
 .logo:hover {
   transform: translateY(-5px);
-  transition: ease-in-out 0.3s;
-}
-
-/* animation end */
-.logo:hover:after {
-  transform: translateY(5px);
   transition: ease-in-out 0.3s;
 }
 

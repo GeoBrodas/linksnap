@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   HStack,
   IconButton,
@@ -6,6 +7,8 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Stack,
+  Text,
   useToast,
 } from '@chakra-ui/react';
 
@@ -16,7 +19,8 @@ import { signOut } from 'next-auth/react';
 import { VscChevronDown } from 'react-icons/vsc';
 import { FaDiscord } from 'react-icons/fa';
 import { BsClipboardCheck } from 'react-icons/bs';
-import { BiExit } from 'react-icons/bi';
+import { BiCheckCircle, BiExit } from 'react-icons/bi';
+import Toast from '../ui/Toast';
 
 function DashboardDrawer({ user }) {
   const toast = useToast();
@@ -28,6 +32,7 @@ function DashboardDrawer({ user }) {
       title: 'Copied to clipboard',
       status: 'success',
       position: 'top-left',
+      render: () => <Toast title={'Copied to clipboard'} />,
     });
   }
 
