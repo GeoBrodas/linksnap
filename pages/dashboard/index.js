@@ -9,11 +9,6 @@ function DashboardPage({ user }) {
 export async function getServerSideProps({ req, res }) {
   const session = await getSession({ req: req });
 
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  );
-
   if (!session) {
     return {
       redirect: {

@@ -5,8 +5,6 @@ import { fetchGitHubStats } from '../helpers/fetch-stats';
 function DevTreeProfilePage({ user, gitHubData }) {
   let githubstats = JSON.parse(gitHubData);
 
-  console.log(githubstats);
-
   return <ProfileComponent user={user} gitHubData={githubstats} />;
 }
 

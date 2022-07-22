@@ -1,17 +1,18 @@
 import { Stack, Text } from '@chakra-ui/react';
-import { BiCheckCircle, BiErrorCircle } from 'react-icons/bi';
+import { FaCheckCircle } from 'react-icons/fa';
+import { VscError } from 'react-icons/vsc';
 
 function Toast({ title, status }) {
   function showIcon(status) {
     switch (status) {
       case 'success':
-        return <BiCheckCircle />;
+        return <FaCheckCircle size={'1.3rem'} />;
 
       case 'error':
-        return <BiErrorCircle />;
+        return <VscError size={'1.3rem'} />;
 
       default:
-        return <BiCheckCircle />;
+        return <FaCheckCircle size={'1.3rem'} />;
     }
   }
 
@@ -23,13 +24,14 @@ function Toast({ title, status }) {
       alignItems={'center'}
       padding={'1rem'}
       rounded={'xl'}
-      margin={'20px 0 0 20px'}
+      margin={'40px 0 0 40px'}
     >
       {showIcon(status)}
       <Text
         style={{
           marginLeft: '1rem',
         }}
+        fontWeight={'semibold'}
       >
         {title}
       </Text>

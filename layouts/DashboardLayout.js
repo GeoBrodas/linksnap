@@ -7,6 +7,7 @@ import DashboardDrawer from '../components/dashboard/DashboardDrawer';
 import Footer from '../components/dashboard/layout-component/Footer';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
+import Toast from '../components/ui/Toast';
 
 function DashboardLayout({ children, ...props }) {
   const methods = useForm();
@@ -49,6 +50,7 @@ function DashboardLayout({ children, ...props }) {
         title: message.message,
         status: 'success',
         position: 'top-left',
+        render: () => <Toast title={message.message} status={'success'} />,
       });
     } catch (error) {
       console.log(error);
@@ -57,6 +59,12 @@ function DashboardLayout({ children, ...props }) {
         title: 'Something went wrong, please try again',
         status: 'error',
         position: 'top-left',
+        render: () => (
+          <Toast
+            title={'Something went wrong, please try again'}
+            status={'error'}
+          />
+        ),
       });
     }
 
@@ -71,6 +79,14 @@ function DashboardLayout({ children, ...props }) {
           'Error revalidating page, if changes are not saved, try again in some time!',
         status: 'error',
         position: 'top-left',
+        render: () => (
+          <Toast
+            title={
+              'Error revalidating page, if changes are not saved, try again in some time!'
+            }
+            status={'error'}
+          />
+        ),
       });
     }
   };
@@ -79,6 +95,38 @@ function DashboardLayout({ children, ...props }) {
     const { name, occupation, email, country, github } = methods.watch();
 
     if (!name || !occupation || !email || !country || !github) return true;
+  }
+
+  function disableButton() {
+    if (!props.user.name) return false;
+
+    const {
+      name,
+      occupation,
+      linkedin,
+      twitter,
+      github,
+      email,
+      country,
+      facebook,
+      devto,
+      hashnode,
+    } = props.user;
+
+    if (
+      methods.watch().name === name &&
+      methods.watch().occupation === occupation &&
+      methods.watch().linkedin === linkedin &&
+      methods.watch().twitter === twitter &&
+      methods.watch().github === github &&
+      methods.watch().email === email &&
+      methods.watch().country === country &&
+      methods.watch().facebook === facebook &&
+      methods.watch().devto === devto &&
+      methods.watch().hashnode === hashnode
+    )
+      return true;
+    else false;
   }
 
   return (
@@ -99,6 +147,7 @@ function DashboardLayout({ children, ...props }) {
                 right="0"
               >
                 <Button
+                  disabled={disableButton()}
                   isLoading={loading}
                   loadingText={'Saving...'}
                   hidden={hideButton()}
@@ -112,6 +161,7 @@ function DashboardLayout({ children, ...props }) {
                   bgColor={'#ff8906'}
                   color={'#fffffe'}
                   onClick={methods.handleSubmit(onSubmit)}
+                  size={'lg'}
                 >
                   Save changes ✨
                 </Button>
