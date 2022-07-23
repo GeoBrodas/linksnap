@@ -1,9 +1,12 @@
 import {
+  Box,
   Stack,
   Stat,
   StatGroup,
+  StatHelpText,
   StatLabel,
   StatNumber,
+  Text,
 } from '@chakra-ui/react';
 import StatBox from './StatBox';
 
@@ -13,11 +16,7 @@ function GitHubStats({ stats }) {
       width={'55vw'}
       style={{
         marginTop: '5rem',
-        borderColor: 'whitesmoke',
       }}
-      border={'2px'}
-      borderRadius={'lg'}
-      padding={'1rem'}
     >
       <StatGroup>
         <StatBox title="Username" data={stats.username} />
@@ -35,6 +34,37 @@ function GitHubStats({ stats }) {
       </StatGroup>
 
       {/* repos detials */}
+      <StatGroup>
+        <Stat>
+          <Text fontWeight="bold" fontSize={'lg'} color={'white'}>
+            Top repos
+          </Text>
+
+          <Stack
+            style={{
+              marginTop: '.1rem',
+            }}
+            flexDirection={'row'}
+            spacing={0}
+            justify="space-around"
+          >
+            {stats.top_repos.map((repo, index) => (
+              <Box width={'50%'} key={index}>
+                <StatLabel
+                  fontWeight={'normal'}
+                  fontSize={'lg'}
+                  color={'white'}
+                >
+                  {repo.name}
+                </StatLabel>
+                <StatHelpText fontSize={'lg'} color={'white'}>
+                  {repo.description}
+                </StatHelpText>
+              </Box>
+            ))}
+          </Stack>
+        </Stat>
+      </StatGroup>
     </Stack>
   );
 }

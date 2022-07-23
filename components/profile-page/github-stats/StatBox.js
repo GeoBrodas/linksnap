@@ -6,11 +6,11 @@ function StatBox({ title, data }) {
     <Stat color="white">
       <StatLabel fontSize="lg">{title}</StatLabel>
       {typeof data === 'string' ? (
-        <StatLabel fontSize="lg" color={'whiteAlpha.700'}>
+        <StatLabel fontSize="lg" color={'#ff8906'}>
           @{data}
         </StatLabel>
       ) : (
-        <StatNumber>{data}</StatNumber>
+        <StatNumber color={'#ff8906'}>{data}</StatNumber>
       )}
     </Stat>
   );
