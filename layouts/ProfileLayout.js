@@ -2,6 +2,7 @@ import { Button, Stack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Logo from '../components/Logo';
+import Footer from '../components/dashboard/layout-component/Footer';
 
 import { BsGithub } from 'react-icons/bs';
 import { HiArrowNarrowRight } from 'react-icons/hi';
@@ -10,7 +11,7 @@ function ProfileLayout({ children }) {
   const { data: session } = useSession();
 
   return (
-    <VStack padding={'2rem 0 0'}>
+    <VStack padding={'1rem 0 0'}>
       <Stack
         margin={'2rem 0'}
         width="70vw"
@@ -28,7 +29,7 @@ function ProfileLayout({ children }) {
             <Button
               variant={'outline'}
               color={'white'}
-              size={'lg'}
+              size={'md'}
               _hover={{
                 color: 'black',
                 bgColor: 'white',
@@ -57,6 +58,7 @@ function ProfileLayout({ children }) {
       </Stack>
 
       {children}
+      <Footer />
     </VStack>
   );
 }

@@ -24,6 +24,12 @@ export async function fetchGitHubStats(username) {
 
   let user = await res1.json();
 
+  if (user.message === 'Not Found') {
+    return {
+      error: 'User not found',
+    };
+  }
+
   let counter = user.public_repos / 30;
 
   // approx counter to the next digit

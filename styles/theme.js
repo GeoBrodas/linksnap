@@ -42,6 +42,13 @@ const theme = extendTheme({
         },
       },
     },
+    Stat: {
+      variants: {
+        orange: {
+          color: 'white',
+        },
+      },
+    },
   },
 
   styles: {

@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import ProfileLayout from '../../layouts/ProfileLayout';
 import BgProfileImage from './BgProfileImage';
+import GitHubStats from './github-stats/GitHubStats';
+import NoGitHubStats from './github-stats/NoGitHubStats';
 import SocialLinks from './SocialLinks';
 
-function ProfileComponent({ user }) {
+function ProfileComponent({ user, gitHubData }) {
   return (
     <ProfileLayout>
       <Head>
@@ -29,6 +31,11 @@ function ProfileComponent({ user }) {
       />
 
       {/* GitHub stats - total repos, top repo, total stars, total forks recieved */}
+      {gitHubData.message === 'Not Found' ? (
+        <NoGitHubStats />
+      ) : (
+        <GitHubStats stats={gitHubData} />
+      )}
 
       {/* Hashnode stats - total articles written, top article written, total likes and comments/views recieved */}
 
