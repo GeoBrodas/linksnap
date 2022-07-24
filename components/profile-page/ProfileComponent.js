@@ -31,7 +31,7 @@ function ProfileComponent({ user, gitHubData }) {
       />
 
       {/* GitHub stats - total repos, top repo, total stars, total forks recieved */}
-      {gitHubData.message === 'Not Found' ? (
+      {gitHubData?.message === 'Not Found' ? (
         <NoGitHubStats />
       ) : (
         <GitHubStats stats={gitHubData} />

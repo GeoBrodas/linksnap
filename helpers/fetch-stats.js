@@ -1,4 +1,5 @@
-import { Github } from '../utils/constructors';
+import { Github, Hashnode } from '../utils/constructors';
+import gql, { GET_USER_ARTICLES, GET_USER_METADATA } from './graphql/queries';
 
 export async function fetchDevStats() {
   // fetch from dev api
@@ -7,11 +8,43 @@ export async function fetchDevStats() {
   // return an object containg all this data
 }
 
-export async function fetchHashnodeStats() {
-  // fetch from hashnode API
-  // extract total reactions, views, articles writter, etc
-  // extract top three posts
-  // return object
+export async function fetchHashnodeStats(username) {
+  const res1 = await gql(GET_USER_METADATA, {
+    username: username,
+  });
+
+  let topPosts = [];
+
+  let totalPosts = res1.data.user.numPosts;
+  let counter = Math.ceil(totalPosts / 6);
+
+  for (let i = 0; i <= counter; i++) {
+    const res2 = await gql(GET_USER_ARTICLES, {
+      page: i,
+      username: username,
+    });
+
+    res2.data.user.publication.posts.forEach((post) => {
+      topPosts.push({
+        title: post.title,
+        totalReactions: post.totalReactions,
+        responseCount: post.responseCount,
+      });
+    });
+  }
+
+  topPosts.sort((a, b) => b.totalReactions - a.totalReactions);
+
+  topPosts = topPosts.slice(0, 2);
+
+  return new Hashnode(
+    res1.data.user.username,
+    res1.data.user.numFollowers,
+    res1.data.user.numFollowing,
+    totalPosts,
+    res1.data.user.numReactions,
+    topPosts
+  );
 }
 
 export async function fetchGitHubStats(username) {
@@ -19,7 +52,6 @@ export async function fetchGitHubStats(username) {
   let res1 = await fetch(`https://api.github.com/users/${username}`);
   let stars = 0;
   let forks = 0;
-  let topStars = 0;
   let top2repos = [];
 
   let user = await res1.json();

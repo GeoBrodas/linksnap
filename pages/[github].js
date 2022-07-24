@@ -1,9 +1,12 @@
 import { PrismaClient } from '@prisma/client';
 import ProfileComponent from '../components/profile-page/ProfileComponent';
-import { fetchGitHubStats } from '../helpers/fetch-stats';
+import { fetchGitHubStats, fetchHashnodeStats } from '../helpers/fetch-stats';
 
-function DevTreeProfilePage({ user, gitHubData }) {
+function DevTreeProfilePage({ user, gitHubData, hashnodeData }) {
   let githubstats = JSON.parse(gitHubData);
+  let hashnodestats = JSON.parse(hashnodeData);
+
+  console.log(hashnodestats);
 
   return <ProfileComponent user={user} gitHubData={githubstats} />;
 }
@@ -42,10 +45,13 @@ export async function getStaticProps(context) {
 
   let gitHubData = await fetchGitHubStats(github);
 
+  let hashnodeData = await fetchHashnodeStats(user.hashnode);
+
   return {
     props: {
       user,
       gitHubData: JSON.stringify(gitHubData),
+      hashnodeData: JSON.stringify(hashnodeData),
     },
   };
 }

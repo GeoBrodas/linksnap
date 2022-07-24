@@ -23,3 +23,21 @@ export class Github {
     this.top_repos = top_repos;
   }
 }
+
+export class Hashnode {
+  constructor(
+    username,
+    followers,
+    following,
+    total_posts,
+    total_reactions,
+    top_posts
+  ) {
+    this.username = username;
+    this.followers = followers;
+    this.following = following;
+    this.total_posts = total_posts;
+    this.total_reactions = total_reactions;
+    this.top_posts = top_posts;
+  }
+}
