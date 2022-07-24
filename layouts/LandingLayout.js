@@ -10,14 +10,18 @@ function LandingLayout({ children, ...props }) {
   const { data: session } = useSession();
 
   return (
-    <Stack padding={'3rem'} bgColor="#0f0e17">
+    <Stack
+      width={'100vw'}
+      padding={{ base: '2rem', md: '3rem' }}
+      bgColor="#0f0e17"
+    >
       {/* Navbar */}
       <HStack justify={'space-between'}>
         {/* Logo */}
         <Logo />
 
         {/* Links */}
-        <HStack spacing={8}>
+        <HStack spacing={8} display={{ base: 'none', md: 'block' }}>
           {Object.keys(navlinks).map((link, index) => (
             <Link passHref key={index} href={link}>
               <Button variant={'link'} fontSize={'1.1rem'} color="#fffffe">

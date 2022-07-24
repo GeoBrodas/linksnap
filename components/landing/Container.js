@@ -6,7 +6,7 @@ function Container({ children }) {
       flexDirection={'column'}
       justifyContent={'center'}
       height={'70vh'}
-      width={{ base: '95%', md: '80%' }}
+      width={{ base: '100%', md: '80%' }}
       margin={'auto'}
       paddingY={'4rem'}
     >
