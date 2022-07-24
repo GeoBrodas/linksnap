@@ -1,6 +1,8 @@
 import { Stack, Heading, Text } from '@chakra-ui/react';
 import Atropos from 'atropos/react';
 import { useSession } from 'next-auth/react';
+
+import HeroImage from '../../public/images/screely-new.png';
 import Image from 'next/image';
 
 import Container from './Container';
@@ -39,7 +41,7 @@ function Hero() {
           <Stack rounded={'xl'}>
             <Image
               alt="hero-image"
-              src="/images/screely-new.png"
+              src={HeroImage}
               width={120}
               height={60}
               layout="responsive"
