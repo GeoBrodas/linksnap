@@ -42,6 +42,7 @@ function Hero() {
             <Image
               alt="hero-image"
               src={HeroImage}
+              placeholder="blur"
               width={120}
               height={60}
               layout="responsive"
