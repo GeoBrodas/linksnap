@@ -1,7 +1,19 @@
 .heroimage {
   width: 50%;
   border-radius: 10px;
+
+  padding: 8px;
+  /* faint glow shadow */
+  transition: all 0.5s ease;
+  box-shadow: 0 0 50px rgba(95, 159, 233, 0.3);
 }
+
+/* hover */
+.heroimage:hover {
+  transition: 0.7s;
+  box-shadow: none;
+}
+
 /* change display property to block in mobile browsers*/
 @media only screen and (max-width: 1200px) {
   .heroimage {
