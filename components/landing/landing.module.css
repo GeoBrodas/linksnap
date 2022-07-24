@@ -1,0 +1,10 @@
+.heroimage {
+  width: 50%;
+  border-radius: 10px;
+}
+/* change display property to block in mobile browsers*/
+@media only screen and (max-width: 1200px) {
+  .heroimage {
+    display: none;
+  }
+}

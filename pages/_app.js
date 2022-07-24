@@ -4,6 +4,7 @@ import { SessionProvider } from 'next-auth/react';
 // theme config for Chakra-UI
 import theme from '../styles/theme';
 import '../styles/styles.css';
+import 'atropos/css';
 
 export default function MyApp({
   Component,

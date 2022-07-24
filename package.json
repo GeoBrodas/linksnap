@@ -13,6 +13,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@prisma/client": "^4.0.0",
+    "atropos": "^1.0.2",
     "boring-avatars": "^1.7.0",
     "chrome-aws-lambda": "^10.1.0",
     "express-jwt": "^7.7.5",
