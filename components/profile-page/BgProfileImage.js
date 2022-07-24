@@ -6,12 +6,21 @@ import { HiLocationMarker } from 'react-icons/hi';
 
 function BgProfileImage({ name, country, occupation, img }) {
   return (
-    <Stack flexDirection={'column'} alignItems={'center'}>
-      <Stack position={'relative'} height={'14rem'} marginY={'1rem'}>
+    <Stack
+      width={{ base: '85vw', md: '80vw', lg: '60vw' }}
+      flexDirection={'column'}
+      alignItems={'center'}
+    >
+      <Stack
+        width={'full'}
+        position={'relative'}
+        height={'14rem'}
+        marginY={'1rem'}
+      >
         {/* gradient bg */}
         <Stack
           rounded={'xl'}
-          width="60vw"
+          width="100%"
           height="10rem"
           bgGradient="linear(to-br, #b6cded, #97b3dc, #799aca, #5a81b9, #3969a8)"
         />
@@ -31,7 +40,7 @@ function BgProfileImage({ name, country, occupation, img }) {
         </Stack>
       </Stack>
 
-      <Stack width={'55vw'}>
+      <Stack width={{ base: '80vw', md: '75vw', lg: '55vw' }}>
         <Stack flexDirection={'row'} alignItems={'center'} spacing={0}>
           <Text fontWeight={'bold'} fontSize={'xl'} variant="orange">
             {name}

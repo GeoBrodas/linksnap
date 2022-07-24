@@ -14,7 +14,7 @@ function ProfileLayout({ children }) {
     <VStack padding={'1rem 0 0'}>
       <Stack
         margin={'2rem 0'}
-        width="70vw"
+        width={{ base: '90vw', md: '85vw', lg: '70vw' }}
         flexDirection={'row'}
         spacing={'0'}
         justify="space-between"
@@ -57,7 +57,12 @@ function ProfileLayout({ children }) {
         )}
       </Stack>
 
-      {children}
+      <Stack
+        width={{ base: '90vw', sm: '80vw', md: '60vw' }}
+        alignItems={'center'}
+      >
+        {children}
+      </Stack>
       <Footer />
     </VStack>
   );

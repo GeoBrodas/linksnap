@@ -1,19 +1,11 @@
-import {
-  Box,
-  Stack,
-  Stat,
-  StatGroup,
-  StatHelpText,
-  StatLabel,
-  StatNumber,
-  Text,
-} from '@chakra-ui/react';
+import { Stack, Stat, StatGroup, Text } from '@chakra-ui/react';
 import StatBox from './StatBox';
+import RepoDetails from './RepoDetails';
 
 function GitHubStats({ stats }) {
   return (
     <Stack
-      width={'55vw'}
+      width={{ base: '80vw', md: '75vw', lg: '55vw' }}
       style={{
         marginTop: '5rem',
       }}
@@ -36,31 +28,25 @@ function GitHubStats({ stats }) {
       {/* repos detials */}
       <StatGroup>
         <Stat>
-          <Text fontWeight="bold" fontSize={'lg'} color={'white'}>
+          <Text
+            fontWeight="semibold"
+            fontSize={{ base: 'md', md: 'lg' }}
+            color={'white'}
+          >
             Top repos
           </Text>
 
           <Stack
             style={{
-              marginTop: '.1rem',
+              marginTop: '.4rem',
             }}
             flexDirection={'row'}
             spacing={0}
             justify="space-around"
+            fontSize={{ base: 'md', md: 'lg' }}
           >
             {stats.top_repos.map((repo, index) => (
-              <Box width={'50%'} key={index}>
-                <StatLabel
-                  fontWeight={'normal'}
-                  fontSize={'lg'}
-                  color={'white'}
-                >
-                  {repo.name}
-                </StatLabel>
-                <StatHelpText fontSize={'lg'} color={'white'}>
-                  {repo.description}
-                </StatHelpText>
-              </Box>
+              <RepoDetails repo={repo} key={index} />
             ))}
           </Stack>
         </Stat>

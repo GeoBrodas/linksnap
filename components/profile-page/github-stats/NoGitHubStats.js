@@ -6,7 +6,7 @@ function NoGitHubStats() {
       style={{
         marginTop: '5rem',
       }}
-      width={'55vw'}
+      width={{ base: '80vw', md: '75vw', lg: '55vw' }}
       rounded={'lg'}
       padding={'3rem 0'}
       bgColor={'white'}

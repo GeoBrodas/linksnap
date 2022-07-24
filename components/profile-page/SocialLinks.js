@@ -129,7 +129,7 @@ function SocialLinks({ twitter, facebook, linkedin, github, devto, hashnode }) {
       flexDirection="row"
       spacing={0}
       justify={'flex'}
-      width={'55vw'}
+      width={{ base: '80vw', md: '75vw', lg: '55vw' }}
     >
       {Object.keys(socialLinks).map((key) => {
         if (socialLinks[key]) {
