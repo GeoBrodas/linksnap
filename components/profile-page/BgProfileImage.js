@@ -4,6 +4,8 @@ import Image from 'next/image';
 // icons
 import { HiLocationMarker } from 'react-icons/hi';
 
+import styles from './profile.module.css';
+
 function BgProfileImage({ name, country, occupation, img }) {
   return (
     <Stack
@@ -26,16 +28,23 @@ function BgProfileImage({ name, country, occupation, img }) {
         />
 
         {/* Image on top */}
-        <Stack position={'absolute'} bottom={'0'} left={'2rem'}>
+        <Stack
+          width={{ base: '120px', md: '140px' }}
+          height={{ base: '120px', md: '140px' }}
+          position={'absolute'}
+          bottom={{ base: '1rem', md: '0' }}
+          left={{ base: '1rem', md: '2rem' }}
+        >
           <Image
             src={img}
             alt={name}
             width={140}
+            height={140}
+            className={styles.bgimage}
             style={{
               borderRadius: '100%',
             }}
-            height={140}
-            layout="fixed"
+            layout="responsive"
           />
         </Stack>
       </Stack>

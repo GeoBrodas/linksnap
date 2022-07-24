@@ -1,6 +1,6 @@
+import { useSession } from 'next-auth/react';
 import { Button, Stack, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
 import Logo from '../components/Logo';
 import Footer from '../components/dashboard/layout-component/Footer';
 
@@ -29,7 +29,7 @@ function ProfileLayout({ children }) {
             <Button
               variant={'outline'}
               color={'white'}
-              size={'md'}
+              size={{ base: 'sm', md: 'md' }}
               _hover={{
                 color: 'black',
                 bgColor: 'white',
