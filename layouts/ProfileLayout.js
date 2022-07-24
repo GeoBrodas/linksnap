@@ -44,7 +44,7 @@ function ProfileLayout({ children }) {
             <Button
               variant={'outline'}
               color={'white'}
-              size={'lg'}
+              size={{ base: 'sm', md: 'md' }}
               _hover={{
                 color: 'black',
                 bgColor: 'white',

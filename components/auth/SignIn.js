@@ -23,7 +23,7 @@ function SignIn() {
         rounded={'lg'}
         padding={'4rem'}
         bgColor={'white'}
-        width={'35vw'}
+        width={{ base: '85vw', sm: '70vw', md: '45vw', lg: '35vw' }}
       >
         <Text fontSize={'3xl'} fontWeight={'bold'}>
           Sign-In
