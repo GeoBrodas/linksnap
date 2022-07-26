@@ -15,6 +15,16 @@
   transition: ease-in-out 0.3s;
 }
 
+.repo {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.repo:hover {
+  transition: ease-in-out 0.3s;
+  background-color: #161b22;
+}
+
 /* add media query to decrease size in mobile devices */
 @media screen and (max-width: 1000px) {
   .logo {

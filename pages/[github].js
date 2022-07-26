@@ -8,7 +8,13 @@ function DevTreeProfilePage({ user, gitHubData, hashnodeData }) {
 
   console.log(hashnodestats);
 
-  return <ProfileComponent user={user} gitHubData={githubstats} />;
+  return (
+    <ProfileComponent
+      user={user}
+      gitHubData={githubstats}
+      hashnodeData={hashnodestats}
+    />
+  );
 }
 
 export async function getStaticPaths() {

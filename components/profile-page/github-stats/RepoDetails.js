@@ -11,6 +11,8 @@ import {
 import { FaRegStar } from 'react-icons/fa';
 import { TbGitFork } from 'react-icons/tb';
 
+import styles from '../profile.module.css';
+
 function RepoDetails({ repo }) {
   const statsText = {
     base: 'md',
@@ -18,8 +20,20 @@ function RepoDetails({ repo }) {
   };
 
   return (
-    <Box width={'50%'}>
-      <StatLabel fontWeight={'normal'} fontSize={statsText} color={'white'}>
+    <Box
+      width={'50%'}
+      border={'2px'}
+      borderColor={'gray.200'}
+      padding={{ base: '.8rem', md: '1rem' }}
+      rounded={'xl'}
+      className={styles.repo}
+    >
+      <StatLabel
+        fontWeight={'medium'}
+        fontFamily={'monospace'}
+        fontSize={statsText}
+        color={'white'}
+      >
         {repo.name}
       </StatLabel>
 
@@ -36,6 +50,7 @@ function RepoDetails({ repo }) {
         <Stack flexDirection={'row'} spacing={0} alignItems={'center'}>
           <FaRegStar color={'white'} />
           <Text
+            id="stats-font"
             variant="orange"
             style={{
               marginLeft: '4px',
@@ -54,6 +69,7 @@ function RepoDetails({ repo }) {
         >
           <TbGitFork color={'white'} />
           <Text
+            id="stats-font"
             variant="orange"
             style={{
               marginLeft: '4px',

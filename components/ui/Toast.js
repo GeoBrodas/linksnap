@@ -22,7 +22,7 @@ function Toast({ title, status }) {
       flexDirection={'row'}
       bgColor={'white'}
       alignItems={'center'}
-      padding={'1rem'}
+      padding={'1rem 0 0 1rem'}
       rounded={'xl'}
       margin={'40px 0 0 40px'}
     >

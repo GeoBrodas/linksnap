@@ -3,9 +3,10 @@ import ProfileLayout from '../../layouts/ProfileLayout';
 import BgProfileImage from './BgProfileImage';
 import GitHubStats from './github-stats/GitHubStats';
 import NoGitHubStats from './github-stats/NoGitHubStats';
+import HashnodeStats from './hashnode-stats/HashnodeStats';
 import SocialLinks from './SocialLinks';
 
-function ProfileComponent({ user, gitHubData }) {
+function ProfileComponent({ user, gitHubData, hashnodeData }) {
   return (
     <ProfileLayout>
       <Head>
@@ -38,6 +39,7 @@ function ProfileComponent({ user, gitHubData }) {
       )}
 
       {/* Hashnode stats - total articles written, top article written, total likes and comments/views recieved */}
+      <HashnodeStats data={hashnodeData} />
 
       {/* Dev to stats */}
     </ProfileLayout>
