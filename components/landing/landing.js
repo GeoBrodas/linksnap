@@ -1,4 +1,5 @@
 import { Stack } from '@chakra-ui/react';
+import About from './About';
 import Hero from './Hero';
 
 function Landing() {
@@ -6,9 +7,12 @@ function Landing() {
     <Stack
       style={{
         marginTop: '3rem',
+        alignItems: 'center',
       }}
     >
       <Hero />
+
+      <About />
     </Stack>
   );
 }

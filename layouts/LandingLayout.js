@@ -11,7 +11,8 @@ function LandingLayout({ children, ...props }) {
 
   return (
     <Stack
-      width={'100vw'}
+      marginX={'auto'}
+      width={'100%'}
       padding={{ base: '2rem', md: '3rem' }}
       bgColor="#0f0e17"
     >
@@ -23,11 +24,11 @@ function LandingLayout({ children, ...props }) {
         {/* Links */}
         <HStack spacing={8} display={{ base: 'none', md: 'block' }}>
           {Object.keys(navlinks).map((link, index) => (
-            <Link passHref key={index} href={link}>
+            <a key={index} href={navlinks[link]}>
               <Button variant={'link'} fontSize={'1.1rem'} color="#fffffe">
                 {link.replace(/_/g, ' ')}
               </Button>
-            </Link>
+            </a>
           ))}
 
           {/* Go to Dashboard */}

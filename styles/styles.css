@@ -1,1 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* enable smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
