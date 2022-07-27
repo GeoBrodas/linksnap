@@ -14,12 +14,21 @@ function About() {
       >
         {/* image */}
 
-        <Stack className={styles.aboutimg} width={'37%'} rounded={'xl'}>
+        <Stack
+          bgColor={'white'}
+          className={styles.aboutimg}
+          width={'40%'}
+          rounded={'xl'}
+          display={{
+            base: 'none',
+            lg: 'block',
+          }}
+        >
           <Image
             alt="about-image"
-            height={'70%'}
+            height={'50%'}
             width={'100%'}
-            src="/images/about-img.png"
+            src="/images/abt-img.png"
             layout="responsive"
           />
         </Stack>
