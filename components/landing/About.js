@@ -1,7 +1,10 @@
-import { Heading, HStack, Stack, Text, VStack } from '@chakra-ui/react';
+import { Heading, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
-import Container from './Container';
+
 import styles from './landing.module.css';
+
+import Container from './Container';
+import AboutImage from '../../public/images/abt-img.png';
 
 function About() {
   return (
@@ -28,7 +31,8 @@ function About() {
             alt="about-image"
             height={'50%'}
             width={'100%'}
-            src="/images/abt-img.png"
+            src={AboutImage}
+            placeholder={'blur'}
             layout="responsive"
           />
         </Stack>
