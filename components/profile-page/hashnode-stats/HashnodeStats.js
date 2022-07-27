@@ -1,15 +1,7 @@
-import {
-  Box,
-  Divider,
-  Heading,
-  HStack,
-  Stack,
-  StatLabel,
-  Text,
-} from '@chakra-ui/react';
+import { Divider, Heading, Stack, StatGroup, Text } from '@chakra-ui/react';
 
-import { BiComment } from 'react-icons/bi';
-import { MdCelebration } from 'react-icons/md';
+import StatBox from '../github-stats/StatBox';
+import Post from './Post';
 
 function HashnodeStats({ data }) {
   return (
@@ -37,31 +29,45 @@ function HashnodeStats({ data }) {
       </Text>
       <Stack flexDirection="row" spacing={0} justify={'space-evenly'} gap={4}>
         {/* Top posts */}
-
         {data.top_posts.map((post, index) => (
-          <Box
+          <Post
             key={index}
-            width={'50%'}
-            bgColor={'white'}
-            padding={'1rem'}
-            rounded={'lg'}
-          >
-            <Text fontWeight={'normal'} color={'black'}>
-              {post.title}
-            </Text>
-            <HStack gap={2}>
-              <HStack>
-                <MdCelebration color={'black'} />
-                <Text>{post.totalReactions}</Text>
-              </HStack>
-              <HStack>
-                <BiComment color={'black'} />
-                <Text>{post.responseCount}</Text>
-              </HStack>
-            </HStack>
-          </Box>
+            title={post.title}
+            brief={post.brief}
+            responseCount={post.responseCount}
+            totalReactions={post.totalReactions}
+          />
         ))}
       </Stack>
+
+      {/* Username, total Posts */}
+      <StatGroup
+        style={{
+          marginTop: '1rem',
+        }}
+      >
+        <StatBox title="Username" data={`@${data.username}`} />
+        <StatBox title="Total Posts" data={data.total_posts} />
+      </StatGroup>
+
+      {/* Followers, following */}
+      <StatGroup>
+        <StatBox title="Followers" data={data.followers} />
+        <StatBox title="Following" data={data.following} />
+      </StatGroup>
+
+      {/* Total reactions */}
+      <StatGroup>
+        <StatBox title="Total reactions" data={data.total_reactions} />
+        <StatBox
+          title="Date Joined"
+          data={new Date(data.dateJoined).toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })}
+        />
+      </StatGroup>
     </Stack>
   );
 }

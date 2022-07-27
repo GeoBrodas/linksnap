@@ -5,7 +5,8 @@ export const GET_USER_METADATA = `
             numFollowing,
             numFollowers,
             numPosts,
-            numReactions
+            numReactions,
+            dateJoined
         }
     }
 `;
@@ -18,6 +19,7 @@ export const GET_USER_ARTICLES = `
                         title
                         totalReactions
                         responseCount
+                        brief
                     }
                 }
             }

@@ -24,7 +24,7 @@ function GitHubStats({ stats }) {
       <Divider />
 
       <StatGroup>
-        <StatBox title="Username" data={stats.username} />
+        <StatBox title="Username" data={`@${stats.username}`} />
         <StatBox title="Public repos" data={stats.total_repos} />
       </StatGroup>
       <StatGroup>

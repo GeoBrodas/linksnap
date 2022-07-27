@@ -1,6 +1,6 @@
 import { Stack, Text } from '@chakra-ui/react';
 
-function NoGitHubStats() {
+function NoGitHubStats({ title }) {
   return (
     <Stack
       style={{
@@ -11,9 +11,7 @@ function NoGitHubStats() {
       padding={'3rem 0'}
       bgColor={'white'}
     >
-      <Text marginX={'auto'}>
-        No GitHub stats found. Please check your GitHub username and try again
-      </Text>
+      <Text marginX={'auto'}>{title}</Text>
     </Stack>
   );
 }

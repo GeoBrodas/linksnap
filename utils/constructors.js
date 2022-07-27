@@ -31,7 +31,8 @@ export class Hashnode {
     following,
     total_posts,
     total_reactions,
-    top_posts
+    top_posts,
+    dateJoined
   ) {
     this.username = username;
     this.followers = followers;
@@ -39,5 +40,6 @@ export class Hashnode {
     this.total_posts = total_posts;
     this.total_reactions = total_reactions;
     this.top_posts = top_posts;
+    this.dateJoined = dateJoined;
   }
 }

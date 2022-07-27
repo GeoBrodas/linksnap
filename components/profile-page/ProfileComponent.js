@@ -32,14 +32,20 @@ function ProfileComponent({ user, gitHubData, hashnodeData }) {
       />
 
       {/* GitHub stats - total repos, top repo, total stars, total forks recieved */}
-      {gitHubData?.message === 'Not Found' ? (
-        <NoGitHubStats />
+      {gitHubData?.error === 'User not found' ? (
+        <NoGitHubStats
+          title={
+            'No GitHub stats found. Please check your GitHub username and try again'
+          }
+        />
       ) : (
         <GitHubStats stats={gitHubData} />
       )}
 
       {/* Hashnode stats - total articles written, top article written, total likes and comments/views recieved */}
-      <HashnodeStats data={hashnodeData} />
+      {hashnodeData?.error !== 'User not found' && (
+        <HashnodeStats data={hashnodeData} />
+      )}
 
       {/* Dev to stats */}
     </ProfileLayout>

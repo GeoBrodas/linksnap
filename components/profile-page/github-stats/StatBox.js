@@ -7,7 +7,7 @@ function StatBox({ title, data }) {
       <StatLabel fontSize="lg">{title}</StatLabel>
       {typeof data === 'string' ? (
         <StatLabel fontSize="lg" color={'#ff8906'}>
-          @{data}
+          {data}
         </StatLabel>
       ) : (
         <StatNumber color={'#ff8906'}>{data}</StatNumber>

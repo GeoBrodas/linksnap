@@ -13,6 +13,15 @@ export async function fetchHashnodeStats(username) {
     username: username,
   });
 
+  if (
+    res1.data.user.username === null ||
+    res1.data.user.username === undefined
+  ) {
+    return {
+      error: 'User not found',
+    };
+  }
+
   let topPosts = [];
 
   let totalPosts = res1.data.user.numPosts;
@@ -29,6 +38,7 @@ export async function fetchHashnodeStats(username) {
         title: post.title,
         totalReactions: post.totalReactions,
         responseCount: post.responseCount,
+        brief: post.brief,
       });
     });
   }
@@ -43,7 +53,8 @@ export async function fetchHashnodeStats(username) {
     res1.data.user.numFollowing,
     totalPosts,
     res1.data.user.numReactions,
-    topPosts
+    topPosts,
+    res1.data.user.dateJoined
   );
 }
 
