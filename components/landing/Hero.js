@@ -19,17 +19,16 @@ function Hero() {
       <Stack
         alignItems={'center'}
         flexDirection="row"
-        justify={'space-between'}
+        justify={'space-around'}
         gap={5}
+        width={'100%'}
       >
         <Stack width={{ base: 'full', lg: '50%' }}>
           <Heading color="#fffffe">All your links at one place</Heading>
 
           {/* Para */}
           <Text color="#a7a9be" fontSize={'1.3rem'}>
-            Linksnap is a simple tool for developers to share their links. Its
-            fetches all you&apos;re GitHub, Dev, Hashnode stats and displays it
-            on you&apos;re DevTree profile.
+            Free, Open Source, and built for the community.
           </Text>
           {/* Button */}
           {!session ? <SignWithGitHub /> : <RepoCTA />}
