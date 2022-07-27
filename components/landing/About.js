@@ -1,7 +1,7 @@
 import { Heading, HStack, Stack, Text, VStack } from '@chakra-ui/react';
-import { IoMdAdd } from 'react-icons/io';
-import { SiDevdotto, SiGithub, SiHashnode } from 'react-icons/si';
+import Image from 'next/image';
 import Container from './Container';
+import styles from './landing.module.css';
 
 function About() {
   return (
@@ -10,23 +10,18 @@ function About() {
         alignItems={'center'}
         marginX={'auto'}
         flexDirection="row"
-        justify={'space-evenly'}
+        justify={'space-between'}
       >
         {/* image */}
-        <Stack
-          display={{ base: 'none', lg: 'inline-flex' }}
-          width={{ base: 'full', lg: '50%' }}
-        >
-          <VStack gap={8}>
-            {/* Hashnode */}
-            <SiHashnode color={'white'} size={'6rem'} />
-            <IoMdAdd color={'white'} size={'2rem'} />
-            <HStack alignItems={'center'} gap={20}>
-              {/* dev and github */}
-              <SiDevdotto color={'white'} size={'6rem'} />
-              <SiGithub color={'white'} size={'6rem'} />
-            </HStack>
-          </VStack>
+
+        <Stack className={styles.aboutimg} width={'37%'} rounded={'xl'}>
+          <Image
+            alt="about-image"
+            height={'70%'}
+            width={'100%'}
+            src="/images/about-img.png"
+            layout="responsive"
+          />
         </Stack>
 
         {/* write-up */}
