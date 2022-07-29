@@ -31,7 +31,7 @@ Linksnap is a LinkTree alternative for developers to showcase their activity acr
 
 #### 🚀 Tech Stack
 
-- PlanetScale
+- [PlanetScale](https://planetscale.io)
 - Next.js
 - Chakra-UI
 
@@ -76,3 +76,5 @@ npm run dev
 #### Contributing
 
 For contributing, please visit the [Contributing Guide]()
+
+Thank you [Hashnode](https://hashnode.com) and [PlanetScale](https://planetscale.io) for organising the [PlanetScale x Hashnode hackathon](https://townhall.hashnode.com/planetscale-hackathon?source=hashnode_countdown) 🎆

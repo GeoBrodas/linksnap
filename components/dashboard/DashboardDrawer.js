@@ -19,7 +19,7 @@ import { signOut } from 'next-auth/react';
 import { VscChevronDown } from 'react-icons/vsc';
 import { FaDiscord } from 'react-icons/fa';
 import { BsClipboardCheck } from 'react-icons/bs';
-import { BiCheckCircle, BiExit } from 'react-icons/bi';
+import { BiExit } from 'react-icons/bi';
 import Toast from '../ui/Toast';
 
 function DashboardDrawer({ user }) {
@@ -52,9 +52,11 @@ function DashboardDrawer({ user }) {
             SignOut
           </MenuItem>
           <MenuItem icon={<FaDiscord />}>Discord</MenuItem>
-          <MenuItem onClick={copyToClipboard} icon={<BsClipboardCheck />}>
-            Copy Link
-          </MenuItem>
+          {user && (
+            <MenuItem onClick={copyToClipboard} icon={<BsClipboardCheck />}>
+              Copy Link
+            </MenuItem>
+          )}
         </MenuList>
       </Menu>
     </HStack>

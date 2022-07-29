@@ -33,6 +33,8 @@ export async function getServerSideProps({ req, res }) {
     prisma.$disconnect();
   }
 
+  console.log(user);
+
   return {
     props: {
       session,

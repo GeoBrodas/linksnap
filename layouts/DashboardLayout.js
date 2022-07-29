@@ -8,9 +8,11 @@ import Footer from '../components/dashboard/layout-component/Footer';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import Toast from '../components/ui/Toast';
+import { useRouter } from 'next/router';
 
 function DashboardLayout({ children, ...props }) {
   const methods = useForm();
+  const router = useRouter();
   const [loading, setIsLoading] = useState(false);
   const { data: session } = useSession();
 
@@ -89,6 +91,8 @@ function DashboardLayout({ children, ...props }) {
         ),
       });
     }
+
+    router.replace('/dashboard');
   };
 
   function hideButton() {
@@ -98,7 +102,7 @@ function DashboardLayout({ children, ...props }) {
   }
 
   function disableButton() {
-    if (!props.user.name) return false;
+    if (!props?.user?.name) return false;
 
     if (loading) return true;
 
@@ -137,7 +141,7 @@ function DashboardLayout({ children, ...props }) {
         <Stack>
           <Stack position={'relative'} width={'60vw'} margin={'8rem auto 0'}>
             {/* Signout - github - discord dropdown */}
-            <DashboardDrawer user={props.user.github} />
+            <DashboardDrawer user={props?.user?.github} />
 
             <Stack position="relative">
               {/* overlay for Saving Button */}

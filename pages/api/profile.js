@@ -70,7 +70,7 @@ async function postProfile(req, res, token) {
 
   console.log(user);
 
-  if (user.length !== 0) {
+  if (user) {
     // update user profile
     console.log('Updating...');
     try {

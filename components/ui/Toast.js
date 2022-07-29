@@ -22,19 +22,21 @@ function Toast({ title, status }) {
       flexDirection={'row'}
       bgColor={'white'}
       alignItems={'center'}
-      padding={'1rem 0 0 1rem'}
+      padding={'1rem'}
       rounded={'xl'}
       margin={'40px 0 0 40px'}
     >
-      {showIcon(status)}
-      <Text
-        style={{
-          marginLeft: '1rem',
-        }}
-        fontWeight={'semibold'}
-      >
-        {title}
-      </Text>
+      <Stack spacing={0} flexDirection={'row'} alignItems={'center'}>
+        {showIcon(status)}
+        <Text
+          style={{
+            margin: 'auto 0 auto .5rem',
+          }}
+          fontWeight={'semibold'}
+        >
+          {title}
+        </Text>
+      </Stack>
     </Stack>
   );
 }
