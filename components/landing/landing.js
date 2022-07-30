@@ -1,6 +1,9 @@
 import { Stack } from '@chakra-ui/react';
 import About from './About';
+import Contributions from './Contributions';
+import Features from './Features';
 import Hero from './Hero';
+import Roadmap from './Roadmap';
 
 function Landing() {
   return (
@@ -13,6 +16,12 @@ function Landing() {
       <Hero />
 
       <About />
+
+      <Features />
+
+      <Roadmap />
+
+      <Contributions />
     </Stack>
   );
 }
