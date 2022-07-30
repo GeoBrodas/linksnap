@@ -58,11 +58,10 @@ function Footer() {
         </Stack>
 
         {/* Links */}
-        <Stack textAlign={'right'}>
+        <Stack style={{ marginTop: '2rem' }} textAlign={{ md: 'right' }}>
           <Text fontWeight={'semibold'} fontSize={'lg'}>
             Find me on
           </Text>
-
           {Object.keys(footerLinks).map((key) => (
             <Link
               key={key}
