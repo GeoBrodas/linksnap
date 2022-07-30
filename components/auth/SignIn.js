@@ -1,6 +1,7 @@
 import { Box, Button, Text, VStack } from '@chakra-ui/react';
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { SiGithub } from 'react-icons/si';
 
 function SignIn() {
@@ -30,22 +31,41 @@ function SignIn() {
         </Text>
 
         <Text fontSize={'lg'} marginTop={'1rem'}>
-          DevTree is a simple tool for developers to share their links. Its
-          fetches all you&apos;re GitHub, Dev, Hashnode stats and displays it on
-          you&apos;re DevTree profile. DevTree never shares its data with
-          anyone.
+          Linksnap is a simple tool for developers to share their links. It
+          fetches all you&apos;re GitHub, Hashnode stats and displays it on
+          you&apos;re Linksnap profile.
         </Text>
 
-        <Button
-          onClick={() => signIn('github')}
-          leftIcon={<SiGithub />}
-          variant={'orange'}
-          size={'md'}
-          marginTop={'1.5rem'}
-          padding={'1.4rem'}
-        >
-          Sign Up with GitHub
-        </Button>
+        <Text marginTop={'1rem'} fontStyle={'italic'}>
+          DevTree never shares its data with anyone.
+        </Text>
+
+        <VStack>
+          <Button
+            onClick={() => signIn('github')}
+            leftIcon={<SiGithub />}
+            variant={'orange'}
+            size={'md'}
+            marginTop={'1.5rem'}
+            padding={'1.4rem'}
+            width={'15rem'}
+          >
+            Sign Up with GitHub
+          </Button>
+
+          <Link href="/" passHref>
+            <Button
+              variant={'outline'}
+              borderColor={'orange'}
+              size={'md'}
+              width={'15rem'}
+              marginTop={'1.5rem'}
+              padding={'1.4rem'}
+            >
+              Go Back
+            </Button>
+          </Link>
+        </VStack>
       </Box>
     </VStack>
   );
