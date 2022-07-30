@@ -18,7 +18,7 @@ function SocialLinks({ user }) {
         Social Links
       </Text>
 
-      <Stack flexDirection="row" spacing={0}>
+      <Stack flexDirection={{ base: 'column', md: 'row' }} spacing={0} gap={5}>
         <SocialInputElement
           icon={<BsGithub />}
           placeholder="leerob"
@@ -26,14 +26,13 @@ function SocialLinks({ user }) {
           value={user?.github}
         />
         <SocialInputElement
-          marginLeft={true}
           icon={<BsTwitter />}
           placeholder="@elonmusk"
           label="Twitter"
           value={user?.twitter}
         />
       </Stack>
-      <Stack flexDirection="row" spacing={0}>
+      <Stack flexDirection={{ base: 'column', md: 'row' }} spacing={0} gap={5}>
         <SocialInputElement
           icon={<BsLinkedin />}
           placeholder="Tanmay Bhat"
@@ -41,14 +40,13 @@ function SocialLinks({ user }) {
           value={user?.linkedin}
         />
         <SocialInputElement
-          marginLeft={true}
           icon={<BsFacebook />}
           placeholder="markzuckerberg"
           label="Facebook"
           value={user?.facebook}
         />
       </Stack>
-      <Stack flexDirection="row" spacing={0}>
+      <Stack flexDirection={{ base: 'column', md: 'row' }} spacing={0} gap={5}>
         <SocialInputElement
           icon={<SiHashnode />}
           placeholder="@eleftheriabatsou"
@@ -56,7 +54,6 @@ function SocialLinks({ user }) {
           value={user?.hashnode}
         />
         <SocialInputElement
-          marginLeft={true}
           icon={<FaDev />}
           placeholder="thepracticaldev"
           label="Devto"

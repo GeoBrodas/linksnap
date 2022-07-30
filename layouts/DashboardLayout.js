@@ -139,7 +139,11 @@ function DashboardLayout({ children, ...props }) {
     <ProfileFormProvider>
       <FormProvider {...methods}>
         <Stack>
-          <Stack position={'relative'} width={'60vw'} margin={'8rem auto 0'}>
+          <Stack
+            position={'relative'}
+            width={{ base: '85vw', md: '60vw' }}
+            margin={'8rem auto 0'}
+          >
             {/* Signout - github - discord dropdown */}
             <DashboardDrawer user={props?.user?.github} />
 

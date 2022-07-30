@@ -5,6 +5,7 @@ import { SessionProvider } from 'next-auth/react';
 import theme from '../styles/theme';
 import '../styles/styles.css';
 import 'atropos/css';
+import NextNProgress from 'nextjs-progressbar';
 
 export default function MyApp({
   Component,
@@ -13,6 +14,11 @@ export default function MyApp({
   return (
     <SessionProvider session={session}>
       <ChakraProvider theme={theme}>
+        <NextNProgress
+          height={3}
+          options={{ showSpinner: false }}
+          color="#ff8906"
+        />
         <Component {...pageProps} />
       </ChakraProvider>
     </SessionProvider>

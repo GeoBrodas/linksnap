@@ -7,6 +7,7 @@ import {
   Stack,
   Text,
   FormHelperText,
+  theme as base,
 } from '@chakra-ui/react';
 import { BiPhoneIncoming } from 'react-icons/bi';
 import { useFormContext } from 'react-hook-form';
@@ -29,7 +30,7 @@ function EditBio({ user }) {
       <Text fontWeight={'bold'} fontSize={'xl'}>
         Basic Details
       </Text>
-      <Stack flexDirection={'row'} spacing={0}>
+      <Stack flexDirection={{ base: 'column', md: 'row' }} spacing={0} gap={5}>
         <FormControl>
           <FormLabel variant={'white'} htmlFor="Name">
             Widely recognised as
@@ -48,11 +49,7 @@ function EditBio({ user }) {
           )}
         </FormControl>
 
-        <FormControl
-          style={{
-            marginLeft: '1rem',
-          }}
-        >
+        <FormControl>
           <FormLabel variant={'white'} htmlFor="occupation">
             Occupation
           </FormLabel>
@@ -72,7 +69,8 @@ function EditBio({ user }) {
           )}
         </FormControl>
       </Stack>
-      <Stack flexDirection={'row'} spacing={0}>
+
+      <Stack flexDirection={{ base: 'column', md: 'row' }} spacing={0} gap={5}>
         <FormControl>
           <FormLabel variant={'white'} htmlFor="email">
             Work Email
@@ -105,11 +103,7 @@ function EditBio({ user }) {
           )}
         </FormControl>
 
-        <FormControl
-          style={{
-            marginLeft: '1rem',
-          }}
-        >
+        <FormControl>
           <FormLabel variant={'white'} htmlFor="Country of origin">
             Country of origin
           </FormLabel>
