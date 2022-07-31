@@ -19,11 +19,19 @@ function Post({ title, brief, responseCount, totalReactions }) {
       <HStack gap={2} marginY={'10px'}>
         <HStack>
           <MdCelebration color={'black'} />
-          <Text>{totalReactions}</Text>
+          <Text>
+            {totalReactions > 1000
+              ? `${(totalReactions / 1000).toFixed(1)}k`
+              : totalReactions}
+          </Text>
         </HStack>
         <HStack>
           <BiComment color={'black'} />
-          <Text>{responseCount}</Text>
+          <Text>
+            {responseCount > 1000
+              ? `${(responseCount / 1000).toFixed(1)}k`
+              : responseCount}
+          </Text>
         </HStack>
       </HStack>
     </Box>

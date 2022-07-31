@@ -12,7 +12,7 @@ import RepoDetails from './RepoDetails';
 function GitHubStats({ stats }) {
   return (
     <Stack
-      width={{ base: '80vw', md: '75vw', lg: '55vw' }}
+      width={{ base: '87vw', md: '75vw', lg: '55vw' }}
       style={{
         marginTop: '5rem',
       }}

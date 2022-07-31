@@ -10,7 +10,9 @@ function StatBox({ title, data }) {
           {data}
         </StatLabel>
       ) : (
-        <StatNumber color={'#ff8906'}>{data}</StatNumber>
+        <StatNumber color={'#ff8906'}>
+          {data > 1000 ? `${(data / 1000).toFixed(1)}k` : data}
+        </StatNumber>
       )}
     </Stat>
   );

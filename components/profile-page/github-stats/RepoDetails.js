@@ -56,7 +56,9 @@ function RepoDetails({ repo }) {
               marginLeft: '4px',
             }}
           >
-            {repo.stars}
+            {repo.stars > 1000
+              ? `${(repo.stars / 1000).toFixed(1)}k`
+              : repo.stars}
           </Text>
         </Stack>
         <Stack
@@ -75,7 +77,9 @@ function RepoDetails({ repo }) {
               marginLeft: '4px',
             }}
           >
-            {repo.forks}
+            {repo.forks > 1000
+              ? `${(repo.forks / 1000).toFixed(1)}k`
+              : repo.forks}
           </Text>
         </Stack>
       </Stack>
