@@ -51,7 +51,14 @@ function DashboardDrawer({ user }) {
           <MenuItem icon={<BiExit />} onClick={() => signOut()}>
             SignOut
           </MenuItem>
-          <MenuItem icon={<FaDiscord />}>Discord</MenuItem>
+
+          <a
+            href="https://discord.gg/qr6mDan55G"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MenuItem icon={<FaDiscord />}>Discord</MenuItem>
+          </a>
           {user && (
             <MenuItem onClick={copyToClipboard} icon={<BsClipboardCheck />}>
               Copy Link
