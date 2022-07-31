@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import ProfileLayout from '../../layouts/ProfileLayout';
 import BgProfileImage from './BgProfileImage';
 import GitHubStats from './github-stats/GitHubStats';
@@ -9,10 +8,6 @@ import SocialLinks from './SocialLinks';
 function ProfileComponent({ user, gitHubData, hashnodeData }) {
   return (
     <ProfileLayout>
-      <Head>
-        <title>{user.name}</title>
-      </Head>
-
       {/* Bg, image component */}
       <BgProfileImage
         name={user?.name}

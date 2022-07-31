@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import Head from 'next/head';
 import ProfileComponent from '../components/profile-page/ProfileComponent';
 import { fetchGitHubStats, fetchHashnodeStats } from '../helpers/fetch-stats';
 
@@ -7,11 +8,17 @@ function DevTreeProfilePage({ user, gitHubData, hashnodeData }) {
   let hashnodestats = JSON.parse(hashnodeData);
 
   return (
-    <ProfileComponent
-      user={user}
-      gitHubData={githubstats}
-      hashnodeData={hashnodestats}
-    />
+    <>
+      <Head>
+        <title>{user.name}</title>
+        <meta name="description" content={user.occupation} />
+      </Head>
+      <ProfileComponent
+        user={user}
+        gitHubData={githubstats}
+        hashnodeData={hashnodestats}
+      />
+    </>
   );
 }
 
