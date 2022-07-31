@@ -195,7 +195,7 @@ function DashboardLayout({ children, ...props }) {
               {/* overlay for Saving Button */}
               <Stack
                 zIndex={'overlay'}
-                padding={'4rem'}
+                padding={{ base: '10px', md: '4rem' }}
                 position="fixed"
                 bottom="0"
                 right="0"

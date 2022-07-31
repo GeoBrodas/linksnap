@@ -24,7 +24,7 @@ function Toast({ title, status }) {
       alignItems={'center'}
       padding={'1rem'}
       rounded={'xl'}
-      margin={'40px 0 0 40px'}
+      margin={{ base: '10px 0 0 10px', md: '40px 0 0 40px' }}
     >
       <Stack spacing={0} flexDirection={'row'} alignItems={'center'}>
         {showIcon(status)}
