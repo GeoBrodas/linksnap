@@ -37,7 +37,7 @@ function SignIn() {
         </Text>
 
         <Text marginTop={'1rem'} fontStyle={'italic'}>
-          DevTree never shares its data with anyone.
+          Linksnap never shares its data with anyone.
         </Text>
 
         <VStack>
