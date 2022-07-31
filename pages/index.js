@@ -30,7 +30,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dapafwlvo/image/upload/v1659271314/LINKSNAP_doy7wr.png"
+          content="https://res.cloudinary.com/dapafwlvo/image/upload/v1659271783/LINKSNAP_1_mkeeif.png"
         />
 
         {/* <!-- Twitter --> */}
@@ -46,7 +46,7 @@ export default function Home() {
         />
         <meta
           property="twitter:image"
-          content="https://res.cloudinary.com/dapafwlvo/image/upload/v1659271314/LINKSNAP_doy7wr.png"
+          content="https://res.cloudinary.com/dapafwlvo/image/upload/v1659271783/LINKSNAP_1_mkeeif.png"
         />
       </Head>
 
