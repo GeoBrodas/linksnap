@@ -6,8 +6,6 @@ function DevTreeProfilePage({ user, gitHubData, hashnodeData }) {
   let githubstats = JSON.parse(gitHubData);
   let hashnodestats = JSON.parse(hashnodeData);
 
-  console.log(hashnodestats);
-
   return (
     <ProfileComponent
       user={user}
@@ -27,6 +25,8 @@ export async function getStaticPaths() {
       github: user.github,
     },
   }));
+
+  prisma.$disconnect();
 
   return {
     paths,

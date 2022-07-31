@@ -28,8 +28,51 @@ function DashboardLayout({ children, ...props }) {
       return alert('Use your respective email to update your profile');
 
     setIsLoading(true);
+
+    // check if github username is valid
+    let checkuser;
+    let response;
+    if (data.github) {
+      try {
+        response = await fetch(`https://api.github.com/users/${data.github}`);
+
+        console.log('Checking for valid username');
+
+        checkuser = await response.json();
+        if (checkuser.message === 'Not Found') {
+          setIsLoading(false);
+          return toast({
+            title: 'Invalid Github Username',
+            status: 'error',
+            position: 'top-left',
+            render: () => (
+              <Toast
+                title={
+                  checkuser.message === 'Not Found'
+                    ? 'Invalid GitHub Username'
+                    : checkuser.message
+                }
+                status={'error'}
+              />
+            ),
+          });
+        }
+      } catch (error) {
+        setIsLoading(false);
+        return toast({
+          title:
+            checkuser?.message ||
+            'Something went wrong, if this continues, please contact support.',
+          status: 'error',
+          position: 'top-left',
+          render: () => <Toast title={checkuser.message} status={'error'} />,
+        });
+      }
+    }
+
     // check if someone has used the github name already!
 
+    let fetchErr;
     try {
       const res = await fetch('/api/profile', {
         method: 'POST',
@@ -44,26 +87,27 @@ function DashboardLayout({ children, ...props }) {
         }),
       });
 
-      const message = await res.json();
+      fetchErr = await res.json();
 
-      console.log(message);
+      console.log(fetchErr);
+
       setIsLoading(false);
       toast({
-        title: message.message,
+        title: fetchErr.message,
         status: 'success',
         position: 'top-left',
-        render: () => <Toast title={message.message} status={'success'} />,
+        render: () => <Toast title={fetchErr.message} status={'success'} />,
       });
     } catch (error) {
       console.log(error);
       setIsLoading(false);
       toast({
-        title: 'Something went wrong, please try again',
+        title: fetchErr.message || 'Something went wrong, please try again',
         status: 'error',
         position: 'top-left',
         render: () => (
           <Toast
-            title={'Something went wrong, please try again'}
+            title={fetchErr.message || 'Something went wrong, please try again'}
             status={'error'}
           />
         ),
