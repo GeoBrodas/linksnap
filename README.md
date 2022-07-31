@@ -6,6 +6,8 @@
 
 ---
 
+<br />
+
 ## What's Linksnap?
 
 Linksnap is a LinkTree/Biolink alternative for developers to showcase their activity across different platforms like GitHub, Hashnode, Dev.to.
