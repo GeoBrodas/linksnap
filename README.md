@@ -1,22 +1,23 @@
 <img src="/public/images/cover.png" alt="cover-image" width="100%" align="center">
 
-### Linksnap - The LinkTree for developers
+<h2 align="center">Linksnap - One place for all your links</h2>
 
-Free, Open source, and built for the community❤️
+<p align="center">Free, Open source, and built for the community❤️</p>
 
 ---
 
-#### What's Linksnap?
+## What's Linksnap?
 
-Linksnap is a LinkTree alternative for developers to showcase their activity across different platforms like GitHub, Hashnode, Dev.to.
+Linksnap is a LinkTree/Biolink alternative for developers to showcase their activity across different platforms like GitHub, Hashnode, Dev.to.
 
-#### ✨ Features
+### ✨ Features
 
-- 🕊️Lightweight and Easy to use!
-- 🔗Create shareable links.
-- 😺Fetch Stats from your favourite platforms.
+- 🕊️ Lightweight and Easy to use!
+- 🔗 Create shareable links.
+- 😺 Fetch Stats from your favourite platforms.
+- 🤹🏽 Responsive across multiple devices.
 
-#### 🔨 Roadmap
+### 🔨 Roadmap
 
 - [ ] Fetch stats from Dev.to
 - [ ] Customize the theme on your profile.
@@ -24,18 +25,20 @@ Linksnap is a LinkTree alternative for developers to showcase their activity acr
 - [ ] Implement likes on Profile Page
 - [ ] See Profile Insights (views, likes, etc)
 - [ ] Modify your profile URL.
-- [ ] Dynamic Og images
-- [ ] Grab stats from more platforms (Youtube, etc.)
+- [ ] Dynamic Og meta images
+- [ ] Grab stats from more platforms (Youtube?, etc.)
 - [x] Fetch Stats from Hashnode
 - [x] Fetch Stats from GitHub
 
-#### 🚀 Tech Stack
+### 🚀 Tech Stack
 
 - [PlanetScale](https://planetscale.io)
-- Next.js
-- Chakra-UI
+- [Next.js](https://nextjs.org)
+- [Chakra-UI](https://chakra-ui.com)
+- [React-Hook-Forms](https://react-hook-form.com/)
+- [NextAuth](https://nextauth.js.org)
 
-#### Developement
+### Developement
 
 - Fork the repository
 
@@ -73,8 +76,8 @@ node -e "console.log(crypto.randomBytes(32).toString('hex'))"
 npm run dev
 ```
 
-#### Contributing
+### Contributing
 
 For contributing, please visit the [Contributing Guide]()
 
-Thank you [Hashnode](https://hashnode.com) and [PlanetScale](https://planetscale.io) for organising the [PlanetScale x Hashnode hackathon](https://townhall.hashnode.com/planetscale-hackathon?source=hashnode_countdown) 🎆
+Thank you [Hashnode](https://hashnode.com) and [PlanetScale](https://planetscale.com) for organising the [PlanetScale x Hashnode hackathon](https://townhall.hashnode.com/planetscale-hackathon?source=hashnode_countdown) 🎆
