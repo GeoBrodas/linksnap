@@ -7,7 +7,7 @@ function Container({ children, ...props }) {
       justifyContent={'center'}
       alignItems={'center'}
       height={props.height || '70vh'}
-      width={{ base: '100%', md: '80%' }}
+      width={{ base: '100%', md: '94%', lg: '80%' }}
       margin={'auto'}
       paddingY={'4rem'}
     >

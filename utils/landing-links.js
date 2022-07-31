@@ -22,7 +22,8 @@ export const featureData = {
     title: 'Stats',
     description:
       'See your stats from your major platforms like GitHub, Hashnode, Dev.to (coming soon).',
-    icon: <BiStats color="black" size={'50px'} style={{ margin: '0 auto' }} />,
+    icon: <BiStats color="white" size={'50px'} style={{ margin: '0 auto' }} />,
+    gradient: 'linear(to-r, green.200, pink.500)',
   },
 
   crossplatform: {
@@ -30,8 +31,9 @@ export const featureData = {
     description:
       'Linksnap is a cross-platform application, its responsive and works on all devices.',
     icon: (
-      <FaMobileAlt color="black" size={'50px'} style={{ margin: '0 auto' }} />
+      <FaMobileAlt color="white" size={'50px'} style={{ margin: '0 auto' }} />
     ),
+    gradient: 'linear(to-r, blue.200, purple.500)',
   },
 
   share: {
@@ -39,8 +41,9 @@ export const featureData = {
     description:
       'Share a unique profile page with your friends, and on social handles',
     icon: (
-      <FaPaperPlane color="black" size={'50px'} style={{ margin: '0 auto' }} />
+      <FaPaperPlane color="white" size={'50px'} style={{ margin: '0 auto' }} />
     ),
+    gradient: 'linear(to-r, green.200, red.100)',
   },
 };
 

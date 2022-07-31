@@ -33,7 +33,6 @@ function LandingLayout({ children, ...props }) {
               </a>
             ))}
 
-            {/* Go to Dashboard */}
             {session?.user && (
               <Link passHref href="/dashboard">
                 <Button
@@ -44,12 +43,32 @@ function LandingLayout({ children, ...props }) {
                     bg: '#fffffe',
                     color: '#0f0e17',
                   }}
+                  size={{ base: 'sm', md: 'md' }}
                 >
                   Go to Dashboard
                 </Button>
               </Link>
             )}
           </HStack>
+          {/* Go to Dashboard */}
+          <Stack display={{ base: 'inline-flex', md: 'none' }}>
+            {session?.user && (
+              <Link passHref href="/dashboard">
+                <Button
+                  rightIcon={<IoIosArrowForward />}
+                  variant={'outline'}
+                  color={'#fffffe'}
+                  _hover={{
+                    bg: '#fffffe',
+                    color: '#0f0e17',
+                  }}
+                  size={{ base: 'sm', md: 'md' }}
+                >
+                  Go to Dashboard
+                </Button>
+              </Link>
+            )}
+          </Stack>
         </HStack>
 
         {children}
