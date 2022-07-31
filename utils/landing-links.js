@@ -5,9 +5,9 @@ import { FaMobileAlt } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 
 export const navlinks = {
-  About: '#-about',
-  Features: '/features',
-  How_to_use: '/how-to',
+  About: '#about',
+  Features: '#features',
+  Roadmap: '#roadmap',
 };
 
 export const footerLinks = {

@@ -15,11 +15,17 @@ function Landing() {
     >
       <Hero />
 
-      <About />
+      <section id="about">
+        <About />
+      </section>
 
-      <Features />
+      <section id="features">
+        <Features />
+      </section>
 
-      <Roadmap />
+      <section id="roadmap">
+        <Roadmap />
+      </section>
 
       <Contributions />
     </Stack>
