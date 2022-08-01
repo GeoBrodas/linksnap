@@ -1,10 +1,8 @@
-<img src="https://raw.githubusercontent.com/GeoBrodas/linksnap/main/public/images/cover.png" alt="cover-image" width="100%" align="center">
+<img src="/public/images/screely-new.png" alt="cover-image" width="100%" align="center">
 
 <h2 align="center">Linksnap - One place for all your links</h2>
 
 <p align="center">Free, Open source, and built for the community❤️</p>
-
----
 
 <br />
 
