@@ -9,6 +9,12 @@ export async function fetchDevStats() {
 }
 
 export async function fetchHashnodeStats(username) {
+  if (!username) {
+    return {
+      error: 'No username provided',
+    };
+  }
+
   const res1 = await gql(GET_USER_METADATA, {
     username: username,
   });

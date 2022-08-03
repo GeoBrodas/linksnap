@@ -60,6 +60,8 @@ export async function getStaticProps(context) {
 
   let hashnodeData = await fetchHashnodeStats(user.hashnode);
 
+  console.log(hashnodeData);
+
   return {
     props: {
       user,

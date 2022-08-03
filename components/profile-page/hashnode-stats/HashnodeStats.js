@@ -4,6 +4,10 @@ import StatBox from '../github-stats/StatBox';
 import Post from './Post';
 
 function HashnodeStats({ data }) {
+  if (data.error) {
+    return null;
+  }
+
   return (
     <Stack
       width={{ base: '87vw', md: '75vw', lg: '55vw' }}
@@ -29,15 +33,16 @@ function HashnodeStats({ data }) {
       </Text>
       <Stack flexDirection="row" spacing={0} justify={'space-evenly'} gap={4}>
         {/* Top posts */}
-        {data.top_posts.map((post, index) => (
-          <Post
-            key={index}
-            title={post.title}
-            brief={post.brief}
-            responseCount={post.responseCount}
-            totalReactions={post.totalReactions}
-          />
-        ))}
+        {data.top_posts?.length > 0 &&
+          data.top_posts.map((post, index) => (
+            <Post
+              key={index}
+              title={post.title}
+              brief={post.brief}
+              responseCount={post.responseCount}
+              totalReactions={post.totalReactions}
+            />
+          ))}
       </Stack>
 
       {/* Username, total Posts */}
