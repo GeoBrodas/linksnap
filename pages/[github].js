@@ -68,7 +68,7 @@ export async function getStaticProps(context) {
       gitHubData: JSON.stringify(gitHubData),
       hashnodeData: JSON.stringify(hashnodeData),
     },
-    revalidate: '600',
+    revalidate: 600,
   };
 }
 
