@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -60,7 +60,7 @@ export async function getStaticProps(context) {
 
   let hashnodeData = await fetchHashnodeStats(user.hashnode);
 
-  console.log(hashnodeData);
+  console.log('Building ' + github + ' profile');
 
   return {
     props: {
@@ -68,7 +68,6 @@ export async function getStaticProps(context) {
       gitHubData: JSON.stringify(gitHubData),
       hashnodeData: JSON.stringify(hashnodeData),
     },
-    revalidate: 600,
   };
 }
 
