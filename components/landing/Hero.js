@@ -24,7 +24,13 @@ function Hero() {
         gap={5}
         width={'100%'}
       >
-        <Stack width={{ base: 'full', lg: '50%' }}>
+        <Stack
+          width={{ base: 'full', lg: '50%' }}
+          textAlign={{
+            base: 'center',
+            md: 'left',
+          }}
+        >
           <Heading color="#fffffe">All your links at one place</Heading>
 
           {/* Para */}
@@ -33,12 +39,16 @@ function Hero() {
           </Text>
 
           <Stack
-            flexDirection={{ base: 'column', lg: 'row' }}
+            flexDirection={{ base: 'column', md: 'row' }}
             gap={5}
             spacing={0}
-            style={{ margin: '2rem auto auto 0' }}
+            style={{ marginTop: '2rem' }}
+            margin={{
+              base: '4rem auto',
+              sm: '2rem auto 0',
+            }}
             alignItems={'center'}
-            justify={'center'}
+            justify={{ base: 'center', sm: 'start' }}
           >
             {/* Button */}
             {!session ? <SignWithGitHub /> : <RepoCTA />}
