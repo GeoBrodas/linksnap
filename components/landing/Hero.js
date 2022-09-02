@@ -1,4 +1,4 @@
-import { Stack, Heading, Text } from '@chakra-ui/react';
+import { Stack, Heading, Text, HStack } from '@chakra-ui/react';
 import Atropos from 'atropos/react';
 import { useSession } from 'next-auth/react';
 
@@ -10,6 +10,7 @@ import RepoCTA from './ui/RepoCTA';
 import SignWithGitHub from './ui/SignWithGitHub';
 
 import styles from './landing.module.css';
+import PH from '../ui/PH';
 
 function Hero() {
   const { data: session } = useSession();
@@ -30,8 +31,20 @@ function Hero() {
           <Text color="#a7a9be" fontSize={'1.3rem'}>
             Free, Open Source, and built for the community.
           </Text>
-          {/* Button */}
-          {!session ? <SignWithGitHub /> : <RepoCTA />}
+
+          <Stack
+            flexDirection={{ base: 'column', lg: 'row' }}
+            gap={5}
+            spacing={0}
+            style={{ margin: '2rem auto auto 0' }}
+            alignItems={'center'}
+            justify={'center'}
+          >
+            {/* Button */}
+            {!session ? <SignWithGitHub /> : <RepoCTA />}
+
+            <PH />
+          </Stack>
         </Stack>
 
         {/* Hero-Image */}
