@@ -1,4 +1,4 @@
-name: Pre Push Tests
+name: Pre Push Checks
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  pre-push-tests:
+  pre-push-checks:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -31,5 +31,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Prettier
+      - name: Run Lint
         run: npm run pre-commit

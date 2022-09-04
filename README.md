@@ -78,6 +78,6 @@ npm run dev
 
 ### Contributing
 
-For contributing, please visit the [Contributing Guide]()
+For contributing, please visit the [Contributing Guide](CONTRIBUTING.md)
 
 Thank you [Hashnode](https://hashnode.com) and [PlanetScale](https://planetscale.com) for organising the [PlanetScale x Hashnode hackathon](https://townhall.hashnode.com/planetscale-hackathon?source=hashnode_countdown) 🎆
