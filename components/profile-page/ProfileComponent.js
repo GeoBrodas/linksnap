@@ -40,6 +40,7 @@ function ProfileComponent({ user, gitHubData, hashnodeData }) {
       {/* Hashnode stats - total articles written, top article written, total likes and comments/views recieved */}
       {(hashnodeData.error !== 'User not found' ||
         hashnodeData.error !== 'No username provided' ||
+        hashnodeData.error !== 'User has no hashnode posts' ||
         !hashnodeData.error) && <HashnodeStats data={hashnodeData} />}
 
       {/* Dev to stats */}

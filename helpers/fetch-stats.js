@@ -39,6 +39,12 @@ export async function fetchHashnodeStats(username) {
       username: username,
     });
 
+    if (!res2.data.user.publication) {
+      return {
+        error: 'User has no hashnode posts',
+      };
+    }
+
     res2.data.user.publication.posts.forEach((post) => {
       topPosts.push({
         title: post.title,
