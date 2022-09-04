@@ -1,4 +1,4 @@
-import { Stat, StatHelpText, StatLabel, StatNumber } from '@chakra-ui/react';
+import { Stat, StatLabel, StatNumber } from '@chakra-ui/react';
 import React from 'react';
 
 function StatBox({ title, data }) {

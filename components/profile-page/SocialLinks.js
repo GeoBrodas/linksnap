@@ -1,4 +1,4 @@
-import { Stack, theme } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import {
   BsFacebook,
   BsGithub,

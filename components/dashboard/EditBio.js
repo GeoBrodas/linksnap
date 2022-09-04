@@ -7,7 +7,6 @@ import {
   Stack,
   Text,
   FormHelperText,
-  theme as base,
 } from '@chakra-ui/react';
 import { BiPhoneIncoming } from 'react-icons/bi';
 import { useFormContext } from 'react-hook-form';

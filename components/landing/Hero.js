@@ -1,4 +1,4 @@
-import { Stack, Heading, Text, HStack } from '@chakra-ui/react';
+import { Stack, Heading, Text } from '@chakra-ui/react';
 import Atropos from 'atropos/react';
 import { useSession } from 'next-auth/react';
 

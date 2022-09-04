@@ -1,11 +1,4 @@
-import {
-  Box,
-  Link,
-  Stack,
-  StatHelpText,
-  StatLabel,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Stack, StatHelpText, StatLabel, Text } from '@chakra-ui/react';
 
 // icons
 import { FaRegStar } from 'react-icons/fa';

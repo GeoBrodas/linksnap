@@ -1,4 +1,4 @@
-import { Stack, VStack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 
 function Container({ children, ...props }) {
   return (

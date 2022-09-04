@@ -1,4 +1,4 @@
-import { Heading, HStack, Stack } from '@chakra-ui/react';
+import { Heading, Stack } from '@chakra-ui/react';
 import Container from './Container';
 import FeatureBox from './ui/FeatureBox';
 

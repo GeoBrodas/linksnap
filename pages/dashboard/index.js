@@ -6,7 +6,7 @@ function DashboardPage({ user }) {
   return <Dashboard user={user} />;
 }
 
-export async function getServerSideProps({ req, res }) {
+export async function getServerSideProps({ req }) {
   const session = await getSession({ req: req });
 
   if (!session) {
