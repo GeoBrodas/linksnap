@@ -8,18 +8,6 @@ async function handler(req, res) {
   // protect apt route using getSession
   const token = await getToken({ req, secret });
 
-  switch (req.method) {
-    case 'GET':
-      return getProfile(req, res);
-    case 'POST':
-      return postProfile(req, res, token);
-    default:
-      return res.status(405).json({
-        status: 405,
-        message: 'Method not allowed',
-      });
-  }
-
   async function postProfile(req, res, token) {
     const {
       name,
@@ -135,6 +123,18 @@ async function handler(req, res) {
     } finally {
       await prisma.$disconnect();
     }
+  }
+
+  switch (req.method) {
+    case 'GET':
+      return getProfile(req, res);
+    case 'POST':
+      return postProfile(req, res, token);
+    default:
+      return res.status(405).json({
+        status: 405,
+        message: 'Method not allowed',
+      });
   }
 }
 

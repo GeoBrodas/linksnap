@@ -8,7 +8,7 @@
     "lint": "next lint",
     "seed": "node prisma/seed.js",
     "prepare": "husky install",
-    "pre-commit": "next lint"
+    "pre-commit": "next lint --fix && git add -A ."
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
     "prisma": "^4.0.0"
   }
