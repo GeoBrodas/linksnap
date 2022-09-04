@@ -3,7 +3,7 @@ import LandingLayout from '../layouts/LandingLayout';
 
 import Landing from '../components/landing/landing';
 
-export default function Home() {
+function Home() {
   return (
     <LandingLayout>
       <Head>
@@ -54,3 +54,5 @@ export default function Home() {
     </LandingLayout>
   );
 }
+
+export default Home;
