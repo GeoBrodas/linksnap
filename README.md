@@ -1,12 +1,11 @@
 <img src="public/images/cover.png" alt="cover" width="100%" align="center">
 
-<a href="https://www.producthunt.com/posts/linksnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-linksnap" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=358075&theme=normal" alt="Linksnap - The&#0032;Linktr&#0046;ee&#0032;for&#0032;developers | Product Hunt" style="width: 250px; height: 54px; margin: 20px 150px 20px 150px;" width="250" height="54" /></a>
-
 <h2 align="center">Linksnap - One place for all your links</h2>
 
 <p align="center">Free, Open source, and built for the community❤️</p>
 
 <br />
+<a href="https://www.producthunt.com/posts/linksnap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-linksnap" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=358075&theme=normal" alt="Linksnap - The&#0032;Linktr&#0046;ee&#0032;for&#0032;developers | Product Hunt" style="width: 250px; height: 54px; margin: 20px 150px 20px 150px;" width="250" height="54" /></a>
 
 ## What's Linksnap?
 
