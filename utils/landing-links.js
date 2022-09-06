@@ -1,8 +1,6 @@
 import { BiStats } from 'react-icons/bi';
 
-import { FaMobileAlt } from 'react-icons/fa';
-
-import { FaPaperPlane } from 'react-icons/fa';
+import { FaMobileAlt, FaPaperPlane } from 'react-icons/fa';
 
 export const navlinks = {
   About: '#about',

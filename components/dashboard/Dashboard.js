@@ -3,6 +3,7 @@ import { HStack, Text, VStack, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import EditBio from './EditBio';
 import SocialLinks from './SocialLinks';
+import ChangeBackgroundSelector from './ChangeBackgroundSelector';
 
 function Dashboard({ user }) {
   return (
@@ -30,6 +31,9 @@ function Dashboard({ user }) {
 
       {/* Social links */}
       <SocialLinks user={user} />
+
+      {/* Change background */}
+      <ChangeBackgroundSelector user={user} />
     </DashboardLayout>
   );
 }

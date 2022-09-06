@@ -22,6 +22,7 @@ async function handler(req, res) {
       hashnode,
       imgUrl,
       theme,
+      background,
     } = req.body;
 
     if (!token)
@@ -37,7 +38,8 @@ async function handler(req, res) {
       !email ||
       !github ||
       !imgUrl ||
-      !theme
+      !theme ||
+      !background
     )
       return res.status(400).json({
         message: 'Bad request',
@@ -77,6 +79,7 @@ async function handler(req, res) {
             hashnode: hashnode,
             imgUrl: imgUrl,
             theme: theme,
+            background: background,
           },
         });
       } catch (e) {
@@ -109,6 +112,7 @@ async function handler(req, res) {
           hashnode,
           imgUrl,
           theme,
+          background,
         },
       });
 

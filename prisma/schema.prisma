@@ -23,4 +23,5 @@ model user {
     facebook    String?
     hashnode    String?
     devto       String?
+    background  String?   @default("ocean")
 }

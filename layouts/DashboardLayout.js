@@ -161,6 +161,7 @@ function DashboardLayout({ children, ...props }) {
       facebook,
       devto,
       hashnode,
+      background,
     } = props.user;
 
     if (
@@ -173,7 +174,8 @@ function DashboardLayout({ children, ...props }) {
       methods.watch().country === country &&
       methods.watch().facebook === facebook &&
       methods.watch().devto === devto &&
-      methods.watch().hashnode === hashnode
+      methods.watch().hashnode === hashnode &&
+      methods.watch().background === background
     )
       return true;
     else false;
