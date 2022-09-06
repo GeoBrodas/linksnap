@@ -14,6 +14,7 @@ function ProfileComponent({ user, gitHubData, hashnodeData }) {
         country={user?.country}
         occupation={user?.occupation}
         img={user?.imgUrl}
+        bgVariant={user?.background}
       />
 
       {/* Social Links all - Twitter, Facebook, etc */}

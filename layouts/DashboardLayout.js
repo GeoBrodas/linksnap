@@ -16,6 +16,8 @@ function DashboardLayout({ children, ...props }) {
   const [loading, setIsLoading] = useState(false);
   const { data: session } = useSession();
 
+  console.log(methods.watch().background);
+
   const toast = useToast();
 
   const onSubmit = async (data) => {

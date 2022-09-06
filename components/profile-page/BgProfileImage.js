@@ -3,10 +3,17 @@ import Image from 'next/image';
 
 // icons
 import { HiLocationMarker } from 'react-icons/hi';
+import { color } from './bgcolor';
 
 import styles from './profile.module.css';
 
-function BgProfileImage({ name, country, occupation, img }) {
+function BgProfileImage({ name, country, occupation, img, bgVariant }) {
+  function getBgVariant(variant) {
+    return Object.keys(color).includes(variant) ? variant : 'ocean';
+  }
+
+  console.log(color[getBgVariant(bgVariant)].backgroundImage);
+
   return (
     <Stack
       width={{ base: '85vw', md: '80vw', lg: '60vw' }}
@@ -24,7 +31,7 @@ function BgProfileImage({ name, country, occupation, img }) {
           rounded={'xl'}
           width="100%"
           height="10rem"
-          bgGradient="linear(to-br, #b6cded, #97b3dc, #799aca, #5a81b9, #3969a8)"
+          bgGradient={color[getBgVariant(bgVariant)].backgroundImage}
         />
 
         {/* Image on top */}

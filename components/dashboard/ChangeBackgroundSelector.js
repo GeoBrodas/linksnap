@@ -12,14 +12,11 @@ function ChangeBackgroundSelector({ user }) {
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'backgroundColor',
-    defaultValue: 'ocean',
+    defaultValue: user?.background || 'ocean',
     onChange: (value) => {
       setValue('background', value);
     },
-    value:
-      methods.watch().background === user.background
-        ? user.background
-        : methods.watch().background,
+    value: methods.watch().background,
   });
 
   console.log(user);

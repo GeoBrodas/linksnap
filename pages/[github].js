@@ -7,6 +7,8 @@ function DevTreeProfilePage({ user, gitHubData, hashnodeData }) {
   let githubstats = JSON.parse(gitHubData);
   let hashnodestats = JSON.parse(hashnodeData);
 
+  console.log(user);
+
   return (
     <>
       <Head>
@@ -59,8 +61,6 @@ export async function getStaticProps(context) {
   let gitHubData = await fetchGitHubStats(github);
 
   let hashnodeData = await fetchHashnodeStats(user.hashnode);
-
-  console.log(hashnodeData);
 
   console.log('Building ' + github + ' profile');
 
