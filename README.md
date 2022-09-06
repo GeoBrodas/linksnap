@@ -1,4 +1,4 @@
-<img src="public/images/cover.png" alt="cover" width="100%" align="center">
+<img src="public/images/stack-linksnap.png" alt="cover" width="100%" align="center">
 
 <h2 align="center">Linksnap - One place for all your links</h2>
 
