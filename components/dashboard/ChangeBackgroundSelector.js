@@ -19,8 +19,6 @@ function ChangeBackgroundSelector({ user }) {
     value: methods.watch().background,
   });
 
-  console.log(user);
-
   const group = getRootProps();
 
   return (

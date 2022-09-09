@@ -1,5 +1,6 @@
 import { Box, useRadio } from '@chakra-ui/react';
 import { useFormContext } from 'react-hook-form';
+import { color } from '../profile-page/bgcolor';
 
 function RadioBox({ children, ...props }) {
   const { getInputProps, getCheckboxProps } = useRadio(props);
@@ -21,9 +22,17 @@ function RadioBox({ children, ...props }) {
         cursor="pointer"
         borderWidth="1px"
         borderRadius="md"
+        transition={'all 0.2s'}
+        _hover={{
+          bg: 'blue.100',
+          transition: 'all 0.2s',
+          transitionDuration: '0.2s',
+        }}
         boxShadow="md"
+        fontWeight={'bold'}
+        rounded={'full'}
         _checked={{
-          bg: 'teal.600',
+          bgGradient: color[props.value].backgroundImage,
           color: 'white',
           borderColor: 'teal.600',
         }}
